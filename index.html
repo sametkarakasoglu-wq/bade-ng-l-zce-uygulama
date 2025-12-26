@@ -2565,6 +2565,27 @@
             color: #94a3b8;
             margin-top: 5px;
         }
+
+        /* QUARTER BUTTONS */
+        .quarter-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .quarter-btn.active {
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px var(--neon-blue);
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -2596,77 +2617,87 @@
     <div class="game-area">
         <!-- HAFTALAR EKRANI (Ana Menü) -->
         <div id="screen-weeks" class="screen">
-            <div style="text-align:center; margin-bottom:50px; animation: floatCard 4s infinite ease-in-out">
-                <h1 style="font-size:3rem; color:#fff; text-shadow:0 4px 10px rgba(0,0,0,0.2); margin:0">Dünya Seç
-                    Bade! 🗺️</h1>
+            <div style="text-align:center; margin-bottom:20px; animation: floatCard 4s infinite ease-in-out">
+                <h1 class="neon-title" style="margin:0">Dünya Seç Bade! 🗺️</h1>
             </div>
-            <div id="grid-weeks">
-                <!-- JS ile doldurulacak -->
-            </div>
-        </div>
 
-        <!-- MACERA HARİTASI (GÜNLER) -->
-        <div id="screen-map" class="screen hidden">
-            <h1 id="map-title" style="color:white; font-size:2.5rem; margin-bottom:20px;">Macera Başlıyor!</h1>
-            <div class="map-container">
-                <div id="map-path" class="map-path"></div>
+            <!-- Quarter Selection -->
+            <div class="quarter-nav"
+                style="display:flex; justify-content:center; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
+                <button id="btn-q1" class="quarter-btn active" onclick="setQuarter(1)">Q1 (1-13)</button>
+                <button id="btn-q2" class="quarter-btn" onclick="setQuarter(2)">Q2 (14-26)</button>
+                <button id="btn-q3" class="quarter-btn" onclick="setQuarter(3)">Q3 (27-39)</button>
+                <button id="btn-q4" class="quarter-btn" onclick="setQuarter(4)">Q4 (40-52)</button>
+            </div>
+            Bade! 🗺️</h1>
+        </div>
+        <div id="grid-weeks">
+            <!-- JS ile doldurulacak -->
+        </div>
+    </div>
+
+    <!-- MACERA HARİTASI (GÜNLER) -->
+    <div id="screen-map" class="screen hidden">
+        <h1 id="map-title" style="color:white; font-size:2.5rem; margin-bottom:20px;">Macera Başlıyor!</h1>
+        <div class="map-container">
+            <div id="map-path" class="map-path"></div>
+        </div>
+    </div>
+
+    <!-- KELİME VE CÜMLE DERSI -->
+    <div id="screen-card" class="screen hidden">
+        <div class="lesson-card">
+            <div class="learned-btn" id="learned-chip" onclick="markLearned()">
+                <span>Öğrendim</span> <span id="learned-check">⭕</span>
+            </div>
+            <div class="emoji-lesson" id="lesson-emo">🪞</div>
+            <div class="text-group">
+                <h2 id="lesson-en" class="word-title"></h2>
+                <h3 id="lesson-tr" class="word-tr"></h3>
+            </div>
+            <!-- CÜMLE KUTUSU (İKİYE BÖLÜNDÜ) -->
+            <div class="sentence-box">
+                <div id="btn-sent-en" class="sent-btn">
+                    <span id="sent-en" class="sentence-en"></span>
+                    <span style="font-size:0.8rem; margin-top:5px; color:var(--secondary)">Tap to Hear
+                        🇬🇧</span>
+                </div>
+                <div id="btn-sent-tr" class="sent-btn">
+                    <span id="sent-tr" class="sentence-tr"></span>
+                    <span style="font-size:0.8rem; margin-top:5px; color:var(--secondary)">Tap to Learn
+                        🇹🇷</span>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="play-btn btn-en" onclick="triggerTalk('en')">🇬🇧</button>
+                <button class="play-btn btn-tr" onclick="triggerTalk('tr')">🇹🇷</button>
             </div>
         </div>
-
-        <!-- KELİME VE CÜMLE DERSI -->
-        <div id="screen-card" class="screen hidden">
-            <div class="lesson-card">
-                <div class="learned-btn" id="learned-chip" onclick="markLearned()">
-                    <span>Öğrendim</span> <span id="learned-check">⭕</span>
-                </div>
-                <div class="emoji-lesson" id="lesson-emo">🪞</div>
-                <div class="text-group">
-                    <h2 id="lesson-en" class="word-title"></h2>
-                    <h3 id="lesson-tr" class="word-tr"></h3>
-                </div>
-                <!-- CÜMLE KUTUSU (İKİYE BÖLÜNDÜ) -->
-                <div class="sentence-box">
-                    <div id="btn-sent-en" class="sent-btn">
-                        <span id="sent-en" class="sentence-en"></span>
-                        <span style="font-size:0.8rem; margin-top:5px; color:var(--secondary)">Tap to Hear
-                            🇬🇧</span>
-                    </div>
-                    <div id="btn-sent-tr" class="sent-btn">
-                        <span id="sent-tr" class="sentence-tr"></span>
-                        <span style="font-size:0.8rem; margin-top:5px; color:var(--secondary)">Tap to Learn
-                            🇹🇷</span>
-                    </div>
-                </div>
-                <div class="controls">
-                    <button class="play-btn btn-en" onclick="triggerTalk('en')">🇬🇧</button>
-                    <button class="play-btn btn-tr" onclick="triggerTalk('tr')">🇹🇷</button>
-                </div>
-            </div>
-            <div class="nav-arrows">
-                <div class="arrow-btn" onclick="moveNav(-1)">💜</div>
-                <div class="arrow-btn" onclick="moveNav(1)">💛</div>
-            </div>
-            <div id="card-index"
-                style="position:absolute; top:30px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg, rgba(0,200,255,0.3) 0%, rgba(150,0,255,0.3) 100%); padding:12px 30px; border-radius:30px; font-weight:900; font-size:1.3rem; color:white; text-shadow:0 2px 10px rgba(0,0,0,0.3); pointer-events:none; backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,0.2);">
-                1 / 5</div>
+        <div class="nav-arrows">
+            <div class="arrow-btn" onclick="moveNav(-1)">💜</div>
+            <div class="arrow-btn" onclick="moveNav(1)">💛</div>
         </div>
+        <div id="card-index"
+            style="position:absolute; top:30px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg, rgba(0,200,255,0.3) 0%, rgba(150,0,255,0.3) 100%); padding:12px 30px; border-radius:30px; font-weight:900; font-size:1.3rem; color:white; text-shadow:0 2px 10px rgba(0,0,0,0.3); pointer-events:none; backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,0.2);">
+            1 / 5</div>
+    </div>
 
-        <!-- SESLİ QUIZ -->
-        <div id="screen-quiz" class="screen hidden">
-            <h1 style="color:white; font-size: 3rem; margin-bottom: 0.5rem;">Soru 1 / 10</h1>
-            <div id="quiz-question-text"
-                style="font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1.5rem; text-shadow: 3px 3px 0 rgba(0,0,0,0.2); background: rgba(255,255,255,0.2); padding: 10px 30px; border-radius: 50px; display: inline-block;">
-                🤔 Nerede bu?</div>
-            <div class="huge-btn pulse" onclick="sayAgain()" style="width: 120px; height: 120px; margin: 0 auto 2rem;">
-                🔊</div>
-            <div id="quiz-grid" style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;"></div>
-        </div>
+    <!-- SESLİ QUIZ -->
+    <div id="screen-quiz" class="screen hidden">
+        <h1 style="color:white; font-size: 3rem; margin-bottom: 0.5rem;">Soru 1 / 10</h1>
+        <div id="quiz-question-text"
+            style="font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1.5rem; text-shadow: 3px 3px 0 rgba(0,0,0,0.2); background: rgba(255,255,255,0.2); padding: 10px 30px; border-radius: 50px; display: inline-block;">
+            🤔 Nerede bu?</div>
+        <div class="huge-btn pulse" onclick="sayAgain()" style="width: 120px; height: 120px; margin: 0 auto 2rem;">
+            🔊</div>
+        <div id="quiz-grid" style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;"></div>
+    </div>
 
-        <!-- STICKER BOOK -->
-        <div id="screen-stickers" class="screen hidden">
-            <h1 style="color:white; font-size:3rem; margin-bottom:30px;">Hediyelerim! 🦄</h1>
-            <div id="grid-stickers" class="quiz-grid" style="grid-template-columns: repeat(4, 1fr);"></div>
-        </div>
+    <!-- STICKER BOOK -->
+    <div id="screen-stickers" class="screen hidden">
+        <h1 style="color:white; font-size:3rem; margin-bottom:30px;">Hediyelerim! 🦄</h1>
+        <div id="grid-stickers" class="quiz-grid" style="grid-template-columns: repeat(4, 1fr);"></div>
+    </div>
     </div>
 
     <div class="mascot-ship">
@@ -2824,94 +2855,89 @@
         }
 
         const SQ = new SpeechQueue();
-        const icons = ["🦉", "🤖", "🐬", "🍭", "🦖", "❄️", "🏜️", "🧙", "🌋", "🦾", "☁️", "🏙️"];
-        const names = ["Orman", "Uzay", "Deniz", "Şeker", "Dino", "Kış", "Çöl", "Sihir", "Lav", "Metal", "Bulut", "Şehir"];
+        let currentQuarter = 1;
+
+        const icons = [
+            "🦉", "🍎", "🐱", "🎨", "⚽", "📚", "👀", "👗", "🚌", "☀️", "🥕", "🚀", // Q1
+            "👨‍⚕️", "👨‍👩‍👧", "🦁", "🎸", "😊", "🍳", "🛏️", "🛁", "🏙️", "🌳", "🏖️", "⛺", // Q2
+            "🎻", "🧪", "🔭", "🦄", "🏃", "🌗", "⛄", "📅", "💯", "🔺", "🥝", "🥦", "🥤", // Q3
+            "🍟", "🧥", "👓", "💻", "🔨", "➗", "🎭", "🎹", "🚜", "🚑", "🐙", "🐄", "🦜", "🦋", "🍄" // Q4
+        ];
+
+        const names = [
+            "Ev", "Meyve", "Hayvan", "Renk", "Oyun", "Okul", "Vücut", "Giysi", "Taşıt", "Doğa", "Sebze", "Uzay", // Q1
+            "Meslek", "Aile", "Vahşi", "Spor", "Duygu", "Mutfak", "Oda", "Banyo", "Şehir", "Park", "Plaj", "Kamp", // Q2
+            "Müzik", "Bilim", "Derin", "Masal", "Eylem", "Zıtlar", "Mevsim", "Takvim", "Sayı", "Şekil", "Egzotik", "Yeşil", "İçecek", // Q3
+            "Atış.", "Kışlık", "Akses.", "Tekno", "Alet", "Ders", "Hobi", "Enstr.", "İnşaat", "Acil", "Deniz", "Çiftlik", "Kuşlar", "Böcek", "Orman" // Q4
+        ];
+
+        const topics = [
+            "Ev Eşyaları", "Yiyecekler", "Evcil Hayvanlar", "Renkler & Şekiller", "Oyuncaklar", "Okul Eşyaları", "Vücudumuz", "Kıyafetler", "Taşıtlar", "Doğa Olayları", "Sebzeler", "Uzay Bilimi",
+            "Meslekler", "Aile & Akraba", "Vahşi Hayvanlar", "Spor Dalları", "Duygularımız", "Mutfak Eşyaları", "Yatak Odası", "Banyo Eşyaları", "Şehir Hayatı", "Oyun Parkı", "Yaz Tatili", "Kamp Macerası",
+            "Müzik Aletleri", "Fen Bilimleri", "Derin Uzay", "Masal Kahramanları", "Hareketler", "Zıt Kavramlar", "Mevsimler", "Aylar & Günler", "Sayılar (10-100)", "Geometri", "Egzotik Meyveler", "Yeşil Sebzeler", "İçecekler",
+            "Atıştırmalıklar", "Kış Modası", "Aksesuarlar", "Teknoloji", "Tamir Aletleri", "Okul Dersleri", "Hobiler", "Orkestra", "İş Makineleri", "Acil Durum", "Deniz Altı", "Çiftlik Hayatı", "Kuş Türleri", "Böcekler", "Orman Bitkileri"
+        ];
 
         const db = {
-            1: [ // Ev Eşyaları
-                { w: "Mirror", t: "Ayna", e: "🪞", sEn: "Look at the mirror", sTr: "Aynaya bak" },
-                { w: "Lamp", t: "Lamba", e: "💡", sEn: "Turn on the lamp", sTr: "Lambayı aç" },
-                { w: "Carpet", t: "Halı", e: "🧶", sEn: "The carpet is soft", sTr: "Halı çok yumuşak" },
-                { w: "Clock", t: "Saat", e: "⏰", sEn: "What time is it", sTr: "Saat kaç" },
-                { w: "Sofa", t: "Koltuk", e: "🛋️", sEn: "Sit on the sofa", sTr: "Koltukta otur" }
-            ],
-            2: [ // Meyveler ve Yiyecekler
-                { w: "Apple", t: "Elma", e: "🍎", sEn: "I eat an apple", sTr: "Ben bir elma yerim" },
-                { w: "Banana", t: "Muz", e: "🍌", sEn: "The banana is yellow", sTr: "Muz sarı renktedir" },
-                { w: "Orange", t: "Portakal", e: "🍊", sEn: "I love orange juice", sTr: "Portakal suyunu severim" },
-                { w: "Milk", t: "Süt", e: "🥛", sEn: "Drink your milk", sTr: "Sütünü iç" },
-                { w: "Bread", t: "Ekmek", e: "🍞", sEn: "Give me some bread", sTr: "Bana biraz ekmek ver" }
-            ],
-            3: [ // Hayvanlar
-                { w: "Cat", t: "Kedi", e: "🐱", sEn: "The cat is sleeping", sTr: "Kedi uyuyor" },
-                { w: "Dog", t: "Köpek", e: "🐶", sEn: "I like dogs", sTr: "Köpekleri severim" },
-                { w: "Bird", t: "Kuş", e: "🐦", sEn: "The bird flies high", sTr: "Kuş yüksekten uçar" },
-                { w: "Fish", t: "Balık", e: "🐟", sEn: "The fish swims fast", sTr: "Balık hızlı yüzer" },
-                { w: "Lion", t: "Aslan", e: "🦁", sEn: "The lion is strong", sTr: "Aslan çok güçlüdür" }
-            ],
-            4: [ // Renkler ve Şekiller
-                { w: "Red", t: "Kırmızı", e: "🔴", sEn: "I like red", sTr: "Kırmızı rengi severim" },
-                { w: "Blue", t: "Mavi", e: "🔵", sEn: "The sky is blue", sTr: "Gökyüzü mavidir" },
-                { w: "Green", t: "Yeşil", e: "🟢", sEn: "The grass is green", sTr: "Çimenler yeşildir" },
-                { w: "Yellow", t: "Sarı", e: "🟡", sEn: "The sun is yellow", sTr: "Güneş sarıdır" },
-                { w: "Heart", t: "Kalp", e: "❤️", sEn: "This is a heart", sTr: "Bu bir kalptir" }
-            ],
-            5: [ // Oyuncaklar
-                { w: "Ball", t: "Top", e: "⚽", sEn: "Throw the ball", sTr: "Topu at" },
-                { w: "Doll", t: "Oyuncak Bebek", e: "🪆", sEn: "Play with the doll", sTr: "Bebekle oyna" },
-                { w: "Car", t: "Oyuncak Araba", e: "🚗", sEn: "Drive the car", sTr: "Arabayı sür" },
-                { w: "Train", t: "Tren", e: "🚂", sEn: "The train is long", sTr: "Tren çok uzundur" },
-                { w: "Robot", t: "Robot", e: "🤖", sEn: "Look at the robot", sTr: "Robota bak" }
-            ],
-            6: [ // Okul Eşyaları
-                { w: "Book", t: "Kitap", e: "📚", sEn: "Read a book", sTr: "Kitap oku" },
-                { w: "Pencil", t: "Kalem", e: "✏️", sEn: "Write with a pencil", sTr: "Kalemle yaz" },
-                { w: "Paper", t: "Kağıt", e: "📄", sEn: "A white paper", sTr: "Beyaz bir kağıt" },
-                { w: "Eraser", t: "Silgi", e: "🧼", sEn: "Use the eraser", sTr: "Silgiyi kullan" },
-                { w: "Bag", t: "Çanta", e: "🎒", sEn: "The bag is big", sTr: "Çanta çok büyüktür" }
-            ],
-            7: [ // Vücudumuz
-                { w: "Eye", t: "Göz", e: "👁️", sEn: "Touch your eye", sTr: "Gözüne dokun" },
-                { w: "Hand", t: "El", e: "✋", sEn: "Shake my hand", sTr: "Elimi tut" },
-                { w: "Nose", t: "Burun", e: "👃", sEn: "Touch your nose", sTr: "Burnuna dokun" },
-                { w: "Head", t: "Kafa", e: "👤", sEn: "Nod your head", sTr: "Kafanı salla" },
-                { w: "Ear", t: "Kulak", e: "👂", sEn: "I hear with my ear", sTr: "Kulağımla duyuyorum" }
-            ],
-            8: [ // Kıyafetler
-                { w: "Hat", t: "Şapka", e: "👒", sEn: "Put on your hat", sTr: "Şapkanı tak" },
-                { w: "Shoes", t: "Ayakkabı", e: "👟", sEn: "Tie your shoes", sTr: "Ayakkabılarını bağla" },
-                { w: "Shirt", t: "Gömlek", e: "👕", sEn: "A blue shirt", sTr: "Mavi bir gömlek" },
-                { w: "Dress", t: "Elbise", e: "👗", sEn: "Look at the dress", sTr: "Elbiseye bak" },
-                { w: "Socks", t: "Çorap", e: "🧦", sEn: "Wear your socks", sTr: "Çoraplarını giy" }
-            ],
-            9: [ // Taşıtlar
-                { w: "Bus", t: "Otobüs", e: "🚌", sEn: "The bus is yellow", sTr: "Sarı bir otobüs" },
-                { w: "Plane", t: "Uçak", e: "✈️", sEn: "The plane flies", sTr: "Uçak uçar" },
-                { w: "Bike", t: "Bisiklet", e: "🚲", sEn: "Ride the bike", sTr: "Bisiklete bin" },
-                { w: "Ship", t: "Gemi", e: "🚢", sEn: "The ship swims", sTr: "Gemi denizde yüzer" },
-                { w: "Helicopter", t: "Helikopter", e: "🚁", sEn: "Look at the helicopter", sTr: "Helikoptere bak" }
-            ],
-            10: [ // Doğa
-                { w: "Sun", t: "Güneş", e: "☀️", sEn: "The sun shines", sTr: "Güneş parlıyor" },
-                { w: "Moon", t: "Ay", e: "🌙", sEn: "The moon is bright", sTr: "Ay çok parlaktır" },
-                { w: "Star", t: "Yıldız", e: "⭐", sEn: "Count the stars", sTr: "Yıldızları say" },
-                { w: "Cloud", t: "Bulut", e: "☁️", sEn: "A white cloud", sTr: "Beyaz bir bulut" },
-                { w: "Rain", t: "Yağmur", e: "🌧️", sEn: "I love the rain", sTr: "Yağmuru seviyorum" }
-            ],
-            11: [ // Sebzeler
-                { w: "Carrot", t: "Havuç", e: "🥕", sEn: "Eat your carrot", sTr: "Havucunu ye" },
-                { w: "Potato", t: "Patates", e: "🥔", sEn: "I like potatoes", sTr: "Patatesi severim" },
-                { w: "Tomato", t: "Domates", e: "🍅", sEn: "Red tomato", sTr: "Kırmızı domates" },
-                { w: "Corn", t: "Mısır", e: "🌽", sEn: "The corn is sweet", sTr: "Mısır tatlıdır" },
-                { w: "Broccoli", t: "Brokoli", e: "🥦", sEn: "Healthy broccoli", sTr: "Sağlıklı brokoli" }
-            ],
-            12: [ // Uzay
-                { w: "Earth", t: "Dünya", e: "🌍", sEn: "Our earth", sTr: "Bizim dünyamız" },
-                { w: "Mars", t: "Mars", e: "🔴", sEn: "The red planet", sTr: "Kırmızı gezegen" },
-                { w: "Rocket", t: "Roket", e: "🚀", sEn: "The rocket goes fast", sTr: "Roket hızlı gider" },
-                { w: "Alien", t: "Uaylı", e: "👽", sEn: "Hello alien", sTr: "Merhaba uzaylı" },
-                { w: "Galaxy", t: "Galaksi", e: "🌌", sEn: "Infinite galaxy", sTr: "Sonsuz galaksi" }
-            ]
+            // Q1 (Hafta 1-12: Mevcut İçerik - Zenginleştirilmiş)
+            1: [{ w: "Mirror", t: "Ayna", e: "🪞", sEn: "Look at the mirror", sTr: "Aynaya bak" }, { w: "Lamp", t: "Lamba", e: "💡", sEn: "Turn on the lamp", sTr: "Lambayı aç" }, { w: "Carpet", t: "Halı", e: "🧶", sEn: "Soft carpet", sTr: "Yumuşak halı" }, { w: "Clock", t: "Saat", e: "⏰", sEn: "Time check", sTr: "Saat kontrolü" }, { w: "Sofa", t: "Koltuk", e: "🛋️", sEn: "Comfy sofa", sTr: "Rahat koltuk" }],
+            2: [{ w: "Apple", t: "Elma", e: "🍎", sEn: "Red apple", sTr: "Kırmızı elma" }, { w: "Banana", t: "Muz", e: "🍌", sEn: "Yellow banana", sTr: "Sarı muz" }, { w: "Orange", t: "Portakal", e: "🍊", sEn: "Juicy orange", sTr: "Sulu portakal" }, { w: "Milk", t: "Süt", e: "🥛", sEn: "Fresh milk", sTr: "Taze süt" }, { w: "Bread", t: "Ekmek", e: "🍞", sEn: "Hot bread", sTr: "Sıcak ekmek" }],
+            3: [{ w: "Cat", t: "Kedi", e: "🐱", sEn: "Cute cat", sTr: "Sevimli kedi" }, { w: "Dog", t: "Köpek", e: "🐶", sEn: "Brave dog", sTr: "Cesur köpek" }, { w: "Bird", t: "Kuş", e: "🐦", sEn: "Singing bird", sTr: "Öten kuş" }, { w: "Fish", t: "Balık", e: "🐟", sEn: "Swimming fish", sTr: "Yüzen balık" }, { w: "Lion", t: "Aslan", e: "🦁", sEn: "King lion", sTr: "Kral aslan" }],
+            4: [{ w: "Red", t: "Kırmızı", e: "🔴", sEn: "Red rose", sTr: "Kırmızı gül" }, { w: "Blue", t: "Mavi", e: "🔵", sEn: "Blue sky", sTr: "Mavi gökyüzü" }, { w: "Green", t: "Yeşil", e: "🟢", sEn: "Green grass", sTr: "Yeşil çimen" }, { w: "Yellow", t: "Sarı", e: "🟡", sEn: "Yellow lemon", sTr: "Sarı limon" }, { w: "Heart", t: "Kalp", e: "❤️", sEn: "Big heart", sTr: "Kocaman kalp" }],
+            5: [{ w: "Ball", t: "Top", e: "⚽", sEn: "Kick the ball", sTr: "Topa vur" }, { w: "Doll", t: "Bebek", e: "🪆", sEn: "Pretty doll", sTr: "Güzel bebek" }, { w: "Car", t: "Araba", e: "🚗", sEn: "Fast car", sTr: "Hızlı araba" }, { w: "Train", t: "Tren", e: "🚂", sEn: "Choo choo train", sTr: "Çuf çuf tren" }, { w: "Robot", t: "Robot", e: "🤖", sEn: "Smart robot", sTr: "Akıllı robot" }],
+            6: [{ w: "Book", t: "Kitap", e: "📚", sEn: "Open your book", sTr: "Kitabını aç" }, { w: "Pencil", t: "Kalem", e: "✏️", sEn: "Sharp pencil", sTr: "Sivri kalem" }, { w: "Paper", t: "Kağıt", e: "📄", sEn: "White paper", sTr: "Beyaz kağıt" }, { w: "Eraser", t: "Silgi", e: "🧼", sEn: "Clean eraser", sTr: "Temiz silgi" }, { w: "Bag", t: "Çanta", e: "🎒", sEn: "School bag", sTr: "Okul çantası" }],
+            7: [{ w: "Eye", t: "Göz", e: "👁️", sEn: "Blue eyes", sTr: "Mavi gözler" }, { w: "Hand", t: "El", e: "✋", sEn: "High five", sTr: "Çak bi beşlik" }, { w: "Nose", t: "Burun", e: "👃", sEn: "Small nose", sTr: "Küçük burun" }, { w: "Head", t: "Kafa", e: "👤", sEn: "Smart head", sTr: "Akıllı kafa" }, { w: "Ear", t: "Kulak", e: "👂", sEn: "Listen well", sTr: "İyi dinle" }],
+            8: [{ w: "Hat", t: "Şapka", e: "👒", sEn: "Cool hat", sTr: "Havalı şapka" }, { w: "Shoes", t: "Ayakkabı", e: "👟", sEn: "New shoes", sTr: "Yeni ayakkabılar" }, { w: "Shirt", t: "Gömlek", e: "👕", sEn: "Clean shirt", sTr: "Temiz gömlek" }, { w: "Dress", t: "Elbise", e: "👗", sEn: "Red dress", sTr: "Kırmızı elbise" }, { w: "Socks", t: "Çorap", e: "🧦", sEn: "Warm socks", sTr: "Sıcak çoraplar" }],
+            9: [{ w: "Bus", t: "Otobüs", e: "🚌", sEn: "School bus", sTr: "Okul otobüsü" }, { w: "Plane", t: "Uçak", e: "✈️", sEn: "High plane", sTr: "Yüksek uçak" }, { w: "Bike", t: "Bisiklet", e: "🚲", sEn: "My bike", sTr: "Benim bisikletim" }, { w: "Ship", t: "Gemi", e: "🚢", sEn: "Big ship", sTr: "Büyük gemi" }, { w: "Helicopter", t: "Helikopter", e: "🚁", sEn: "Fast heli", sTr: "Hızlı helikopter" }],
+            10: [{ w: "Sun", t: "Güneş", e: "☀️", sEn: "Hot sun", sTr: "Sıcak güneş" }, { w: "Moon", t: "Ay", e: "🌙", sEn: "Night moon", sTr: "Gece ayı" }, { w: "Star", t: "Yıldız", e: "⭐", sEn: "Shining star", sTr: "Parlayan yıldız" }, { w: "Cloud", t: "Bulut", e: "☁️", sEn: "Fluffy cloud", sTr: "Pamuk bulut" }, { w: "Rain", t: "Yağmur", e: "🌧️", sEn: "Wet rain", sTr: "Islak yağmur" }],
+            11: [{ w: "Carrot", t: "Havuç", e: "🥕", sEn: "Orange carrot", sTr: "Turuncu havuç" }, { w: "Potato", t: "Patates", e: "🥔", sEn: "Fried potato", sTr: "Patates kızartması" }, { w: "Tomato", t: "Domates", e: "🍅", sEn: "Red tomato", sTr: "Kırmızı domates" }, { w: "Corn", t: "Mısır", e: "🌽", sEn: "Sweet corn", sTr: "Tatlı mısır" }, { w: "Broccoli", t: "Brokoli", e: "🥦", sEn: "Green broccoli", sTr: "Yeşil brokoli" }],
+            12: [{ w: "Earth", t: "Dünya", e: "🌍", sEn: "Blue planet", sTr: "Mavi gezegen" }, { w: "Mars", t: "Mars", e: "🔴", sEn: "Red planet", sTr: "Kırmızı gezegen" }, { w: "Rocket", t: "Roket", e: "🚀", sEn: "Space rocket", sTr: "Uzay roketi" }, { w: "Alien", t: "Uzaylı", e: "👽", sEn: "Friendly alien", sTr: "Dost uzaylı" }, { w: "Galaxy", t: "Galaksi", e: "🌌", sEn: "Huge galaxy", sTr: "Dev galaksi" }],
+
+            // Q2 (Hafta 13-26)
+            13: [{ w: "Doctor", t: "Doktor", e: "👨‍⚕️", sEn: "Helpful doctor", sTr: "Yardımsever doktor" }, { w: "Teacher", t: "Öğretmen", e: "👩‍🏫", sEn: "My teacher", sTr: "Benim öğretmenim" }, { w: "Police", t: "Polis", e: "👮", sEn: "Police officer", sTr: "Polis memuru" }, { w: "Chef", t: "Aşçı", e: "👨‍🍳", sEn: "Great chef", sTr: "Harika aşçı" }, { w: "Fireman", t: "İtfaiyeci", e: "👨‍🚒", sEn: "Brave fireman", sTr: "Cesur itfaiyeci" }],
+            14: [{ w: "Mother", t: "Anne", e: "👩", sEn: "I love mom", sTr: "Annemi seviyorum" }, { w: "Father", t: "Baba", e: "👨", sEn: "Super dad", sTr: "Süper baba" }, { w: "Sister", t: "Kız Kardeş", e: "👧", sEn: "Little sister", sTr: "Küçük kız kardeş" }, { w: "Brother", t: "Erkek Kardeş", e: "👦", sEn: "Big brother", sTr: "Büyük erkek kardeş" }, { w: "Baby", t: "Bebek", e: "👶", sEn: "Cute baby", sTr: "Sevimli bebek" }],
+            15: [{ w: "Tiger", t: "Kaplan", e: "🐯", sEn: "Roaring tiger", sTr: "Kükreyen kaplan" }, { w: "Elephant", t: "Fil", e: "🐘", sEn: "Big elephant", sTr: "Büyük fil" }, { w: "Monkey", t: "Maymun", e: "🐒", sEn: "Funny monkey", sTr: "Komik maymun" }, { w: "Zebra", t: "Zebra", e: "🦓", sEn: "Striped zebra", sTr: "Çizgili zebra" }, { w: "Giraffe", t: "Zürafa", e: "🦒", sEn: "Tall giraffe", sTr: "Uzun zürafa" }],
+            16: [{ w: "Football", t: "Futbol", e: "⚽", sEn: "Play football", sTr: "Futbol oyna" }, { w: "Basketball", t: "Basketbol", e: "🏀", sEn: "Jump high", sTr: "Yükseğe zıpla" }, { w: "Tennis", t: "Tenis", e: "🎾", sEn: "Hit the ball", sTr: "Topa vur" }, { w: "Swimming", t: "Yüzme", e: "🏊", sEn: "Swim fast", sTr: "Hızlı yüz" }, { w: "Running", t: "Koşu", e: "🏃", sEn: "Run run run", sTr: "Koş koş koş" }],
+            17: [{ w: "Happy", t: "Mutlu", e: "😊", sEn: "I am happy", sTr: "Ben mutluyum" }, { w: "Sad", t: "Üzgün", e: "😢", sEn: "Don't be sad", sTr: "Üzülme" }, { w: "Angry", t: "Kızgın", e: "😠", sEn: "He is angry", sTr: "O çok kızgın" }, { w: "Surprised", t: "Şaşkın", e: "😯", sEn: "Wow surprised", sTr: "Vay canına" }, { w: "Sleepy", t: "Uykulu", e: "😴", sEn: "I am sleepy", sTr: "Uykum geldi" }],
+            18: [{ w: "Spoon", t: "Kaşık", e: "🥄", sEn: "Soup spoon", sTr: "Çorba kaşığı" }, { w: "Fork", t: "Çatal", e: "🍴", sEn: "Use a fork", sTr: "Çatal kullan" }, { w: "Knife", t: "Bıçak", e: "🔪", sEn: "Sharp knife", sTr: "Keskin bıçak" }, { w: "Plate", t: "Tabak", e: "🍽️", sEn: "Clean plate", sTr: "Temiz tabak" }, { w: "Cup", t: "Fincan", e: "☕", sEn: "Tea cup", sTr: "Çay fincanı" }],
+            19: [{ w: "Bed", t: "Yatak", e: "🛏️", sEn: "Soft bed", sTr: "Yumuşak yatak" }, { w: "Pillow", t: "Yastık", e: "☁️", sEn: "Fluffy pillow", sTr: "Puf yastık" }, { w: "Blanket", t: "Battaniye", e: "🛌", sEn: "Warm blanket", sTr: "Sıcak battaniye" }, { w: "Closet", t: "Dolap", e: "🚪", sEn: "Big closet", sTr: "Büyük dolap" }, { w: "Desklamp", t: "Masa Amb.", e: "💡", sEn: "Bright lamp", sTr: "Parlak lamba" }],
+            20: [{ w: "Soap", t: "Sabun", e: "🧼", sEn: "Wash hands", sTr: "Ellerini yıka" }, { w: "Towel", t: "Havlu", e: "🧖", sEn: "Dry towel", sTr: "Kuru havlu" }, { w: "Toothbrush", t: "Diş Fırçası", e: "🪥", sEn: "Brush teeth", sTr: "Dişlerini fırçala" }, { w: "Bath", t: "Küvet", e: "🛁", sEn: "Bubble bath", sTr: "Köpük banyosu" }, { w: "Mirror", t: "Ayna", e: "🪞", sEn: "Shiny mirror", sTr: "Parlak ayna" }],
+            21: [{ w: "Road", t: "Yol", e: "🛣️", sEn: "Long road", sTr: "Uzun yol" }, { w: "Building", t: "Bina", e: "🏢", sEn: "Tall building", sTr: "Yüksek bina" }, { w: "Park", t: "Park", e: "🌳", sEn: "City park", sTr: "Şehir parkı" }, { w: "Shop", t: "Dükkan", e: "🏪", sEn: "Toy shop", sTr: "Oyuncakçı" }, { w: "Hospital", t: "Hastane", e: "🏥", sEn: "Big hospital", sTr: "Büyük hastane" }],
+            22: [{ w: "Swing", t: "Salıncak", e: "🪑", sEn: "Swing high", sTr: "Yükseğe sallan" }, { w: "Slide", t: "Kaydırak", e: "🎢", sEn: "Slide down", sTr: "Aşağı kay" }, { w: "Sand", t: "Kum", e: "🏖️", sEn: "Play sand", sTr: "Kumla oyna" }, { w: "Grass", t: "Çim", e: "🌿", sEn: "Green grass", sTr: "Yeşil çim" }, { w: "Tree", t: "Ağaç", e: "🌳", sEn: "Climb tree", sTr: "Ağaca tırman" }],
+            23: [{ w: "Sea", t: "Deniz", e: "🌊", sEn: "Blue sea", sTr: "Mavi deniz" }, { w: "Sun", t: "Güneş", e: "☀️", sEn: "Hot sun", sTr: "Sıcak güneş" }, { w: "Sandcastle", t: "Kale", e: "🏰", sEn: "Sand castle", sTr: "Kumdan kale" }, { w: "Shell", t: "Kabuk", e: "🐚", sEn: "Sea shell", sTr: "Deniz kabuğu" }, { w: "Swim", t: "Yüzmek", e: "🏊", sEn: "Swim sea", sTr: "Denizde yüz" }],
+            24: [{ w: "Tent", t: "Çadır", e: "⛺", sEn: "Sleep in tent", sTr: "Çadırda uyu" }, { w: "Fire", t: "Ateş", e: "🔥", sEn: "Camp fire", sTr: "Kamp ateşi" }, { w: "Map", t: "Harita", e: "🗺️", sEn: "Read map", sTr: "Haritayı oku" }, { w: "Flashlight", t: "Fener", e: "🔦", sEn: "Use light", sTr: "Işığı kullan" }, { w: "Backpack", t: "Sırt Çantası", e: "🎒", sEn: "Big pack", sTr: "Büyük çanta" }],
+            25: [{ w: "Piano", t: "Piyano", e: "🎹", sEn: "Play piano", sTr: "Piyano çal" }, { w: "Guitar", t: "Gitar", e: "🎸", sEn: "Rock guitar", sTr: "Gitar çal" }, { w: "Drum", t: "Davul", e: "🥁", sEn: "Bang drums", sTr: "Davula vur" }, { w: "Note", t: "Nota", e: "🎵", sEn: "Music note", sTr: "Müzik notası" }, { w: "Violin", t: "Keman", e: "🎻", sEn: "Sad violin", sTr: "Hüzünlü keman" }],
+
+            // Q3 (Hafta 27-39)
+            26: [{ w: "Magnet", t: "Mıknatıs", e: "🧲", sEn: "Strong magnet", sTr: "Güçlü mıknatıs" }, { w: "Microscope", t: "Mikroskop", e: "🔬", sEn: "Look close", sTr: "Yakından bak" }, { w: "Flask", t: "İksir", e: "🧪", sEn: "Magic potion", sTr: "Sihirli iksir" }, { w: "Atom", t: "Atom", e: "⚛️", sEn: "Small atom", sTr: "Küçük atom" }, { w: "Robot", t: "Robot", e: "🤖", sEn: "Future robot", sTr: "Geleceğin robotu" }],
+            27: [{ w: "Star", t: "Yıldız", e: "⭐", sEn: "Far star", sTr: "Uzak yıldız" }, { w: "Comet", t: "Kuyruklu Y.", e: "☄️", sEn: "Fast comet", sTr: "Hızlı kuyruklu yıldız" }, { w: "Blackhole", t: "Karadelik", e: "🕳️", sEn: "Deep hole", sTr: "Derin delik" }, { w: "Satellite", t: "Uydu", e: "🛰️", sEn: "Space sat", sTr: "Uzay uydusu" }, { w: "Telescope", t: "Teleskop", e: "🔭", sEn: "See space", sTr: "Uzayı gör" }],
+            28: [{ w: "Dragon", t: "Ejderha", e: "🐲", sEn: "Fire dragon", sTr: "Ateş ejderhası" }, { w: "Unicorn", t: "Tekboynuz", e: "🦄", sEn: "Magic horse", sTr: "Sihirli at" }, { w: "Fairy", t: "Peri", e: "🧚", sEn: "Tiny fairy", sTr: "Minik peri" }, { w: "Ghost", t: "Hayalet", e: "👻", sEn: "Boo ghost", sTr: "Böö hayalet" }, { w: "Witch", t: "Cadı", e: "🧙‍♀️", sEn: "Flying witch", sTr: "Uçan cadı" }],
+            29: [{ w: "Jump", t: "Zıpla", e: "🦘", sEn: "Jump high", sTr: "Yükseğe zıpla" }, { w: "Run", t: "Koş", e: "🏃", sEn: "Run fast", sTr: "Hızlı koş" }, { w: "Eat", t: "Ye", e: "🍽️", sEn: "Eat food", sTr: "Yemek ye" }, { w: "Sleep", t: "Uyu", e: "😴", sEn: "Sleep well", sTr: "İyi uyu" }, { w: "Dance", t: "Dans Et", e: "💃", sEn: "Dance now", sTr: "Şimdi dans et" }],
+            30: [{ w: "Big", t: "Büyük", e: "🐘", sEn: "Big elephant", sTr: "Büyük fil" }, { w: "Small", t: "Küçük", e: "🐜", sEn: "Small ant", sTr: "Küçük karınca" }, { w: "Hot", t: "Sıcak", e: "🔥", sEn: "Hot fire", sTr: "Sıcak ateş" }, { w: "Cold", t: "Soğuk", e: "❄️", sEn: "Cold ice", sTr: "Soğuk buz" }, { w: "Fast", t: "Hızlı", e: "🐆", sEn: "Fast cheetah", sTr: "Hızlı çita" }],
+            31: [{ w: "Summer", t: "Yaz", e: "☀️", sEn: "Hot summer", sTr: "Sıcak yaz" }, { w: "Winter", t: "Kış", e: "❄️", sEn: "Cold winter", sTr: "Soğuk kış" }, { w: "Spring", t: "İlkbahar", e: "🌸", sEn: "Green spring", sTr: "Yeşil bahar" }, { w: "Autumn", t: "Sonbahar", e: "🍂", sEn: "Fall leaves", sTr: "Dökülen yapraklar" }, { w: "Snow", t: "Kar", e: "⛄", sEn: "White snow", sTr: "Beyaz kar" }],
+            32: [{ w: "Monday", t: "Pazartesi", e: "📅", sEn: "Start week", sTr: "Hafta başı" }, { w: "Friday", t: "Cuma", e: "🎉", sEn: "Fun day", sTr: "Eğlence günü" }, { w: "Sunday", t: "Pazar", e: "🌞", sEn: "Sunny day", sTr: "Güneşli gün" }, { w: "January", t: "Ocak", e: "☃️", sEn: "First month", sTr: "İlk ay" }, { w: "Year", t: "Yıl", e: "🗓️", sEn: "New year", sTr: "Yeni yıl" }],
+            33: [{ w: "Ten", t: "On", e: "🔟", sEn: "Ten fingers", sTr: "On parmak" }, { w: "Twenty", t: "Yirmi", e: "2️⃣0️⃣", sEn: "Twenty toes", sTr: "Yirmi parmak" }, { w: "Hundred", t: "Yüz", e: "💯", sEn: "Full marks", sTr: "Tam puan" }, { w: "Fifty", t: "Elli", e: "5️⃣0️⃣", sEn: "Halfway", sTr: "Yarı yol" }, { w: "Zero", t: "Sıfır", e: "0️⃣", sEn: "Nothing", sTr: "Hiçbir şey" }],
+            34: [{ w: "Circle", t: "Daire", e: "⚪", sEn: "Round circle", sTr: "Yuvarlak daire" }, { w: "Square", t: "Kare", e: "🟥", sEn: "Box square", sTr: "Kutu kare" }, { w: "Triangle", t: "Üçgen", e: "🔺", sEn: "Sharp triangle", sTr: "Sivri üçgen" }, { w: "Star", t: "Yıldız", e: "⭐", sEn: "Five points", sTr: "Beş köşe" }, { w: "Cube", t: "Küp", e: "🧊", sEn: "Ice cube", sTr: "Buz küpü" }],
+            35: [{ w: "Pineapple", t: "Ananas", e: "🍍", sEn: "Yellow fruit", sTr: "Sarı meyve" }, { w: "Kiwi", t: "Kivi", e: "🥝", sEn: "Green kiwi", sTr: "Yeşil kivi" }, { w: "Mango", t: "Mango", e: "🥭", sEn: "Sweet mango", sTr: "Tatlı mango" }, { w: "Coconut", t: "Hindistan C.", e: "🥥", sEn: "Hard nut", sTr: "Sert ceviz" }, { w: "Grape", t: "Üzüm", e: "🍇", sEn: "Purple grape", sTr: "Mor üzüm" }],
+            36: [{ w: "Cucumber", t: "Salatalık", e: "🥒", sEn: "Green stick", sTr: "Yeşil çubuk" }, { w: "Pepper", t: "Biber", e: "🫑", sEn: "Red pepper", sTr: "Kırmızı biber" }, { w: "Onion", t: "Soğan", e: "🧅", sEn: "Cry onion", sTr: "Ağlatan soğan" }, { w: "Peas", t: "Bezelye", e: "🟢", sEn: "Tiny peas", sTr: "Minik bezelye" }, { w: "Salad", t: "Salata", e: "🥗", sEn: "Healthy salad", sTr: "Sağlıklı salata" }],
+            37: [{ w: "Water", t: "Su", e: "💧", sEn: "Drink water", sTr: "Su iç" }, { w: "Juice", t: "Meyve Suyu", e: "🧃", sEn: "Apple juice", sTr: "Elma suyu" }, { w: "Tea", t: "Çay", e: "☕", sEn: "Hot tea", sTr: "Sıcak çay" }, { w: "Soda", t: "Gazoz", e: "🥤", sEn: "Fizzy soda", sTr: "Gazlı içecek" }, { w: "Milkshake", t: "Sütlü", e: "🥛", sEn: "Sweet shake", sTr: "Tatlı karışım" }],
+            38: [{ w: "Cookie", t: "Kurabiye", e: "🍪", sEn: "Yummy cookie", sTr: "Leziz kurabiye" }, { w: "Cake", t: "Pasta", e: "🍰", sEn: "Birthday cake", sTr: "Doğum günü pastası" }, { w: "Chocolate", t: "Çikolata", e: "🍫", sEn: "Dark choco", sTr: "Siyah çikolata" }, { w: "Ice Cream", t: "Dondurma", e: "🍦", sEn: "Cold cream", sTr: "Soğuk dondurma" }, { w: "Pizza", t: "Pizza", e: "🍕", sEn: "Hot pizza", sTr: "Sıcak pizza" }],
+
+            // Q4 (Hafta 40-52)
+            39: [{ w: "Coat", t: "Kaban", e: "🧥", sEn: "Winter coat", sTr: "Kışlık kaban" }, { w: "Scarf", t: "Atkı", e: "🧣", sEn: "Warm scarf", sTr: "Sıcak atkı" }, { w: "Gloves", t: "Eldiven", e: "🧤", sEn: "Hand gloves", sTr: "El eldiveni" }, { w: "Boots", t: "Bot", e: "👢", sEn: "Rain boots", sTr: "Yağmur botu" }, { w: "Beanie", t: "Bere", e: "🧢", sEn: "Head warm", sTr: "Kafayı ısıtır" }],
+            40: [{ w: "Glasses", t: "Gözlük", e: "👓", sEn: "See better", sTr: "Daha iyi gör" }, { w: "Watch", t: "Saat", e: "⌚", sEn: "Wrist watch", sTr: "Kol saati" }, { w: "Ring", t: "Yüzük", e: "💍", sEn: "Gold ring", sTr: "Altın yüzük" }, { w: "Umbrella", t: "Şemsiye", e: "☂️", sEn: "Rain stop", sTr: "Yağmuru durdur" }, { w: "Crown", t: "Taç", e: "👑", sEn: "King crown", sTr: "Kral tacı" }],
+            41: [{ w: "Phone", t: "Telefon", e: "📱", sEn: "Call mom", sTr: "Anneyi ara" }, { w: "Computer", t: "Bilgisayar", e: "💻", sEn: "Work hard", sTr: "Çok çalış" }, { w: "Camera", t: "Kamera", e: "📷", sEn: "Take photo", sTr: "Fotoğraf çek" }, { w: "Battery", t: "Pil", e: "🔋", sEn: "Full power", sTr: "Tam güç" }, { w: "Mouse", t: "Fare", e: "🖱️", sEn: "Click click", sTr: "Tıkla tıkla" }],
+            42: [{ w: "Hammer", t: "Çekiç", e: "🔨", sEn: "Bang bang", sTr: "Küt küt" }, { w: "Wrench", t: "Anahtar", e: "🔧", sEn: "Turn it", sTr: "Çevir onu" }, { w: "Ladder", t: "Merdiven", e: "🪜", sEn: "Climb up", sTr: "Yukarı tırman" }, { w: "Box", t: "Kutu", e: "📦", sEn: "Open box", sTr: "Kutuyu aç" }, { w: "Brush", t: "Fırça", e: "🖌️", sEn: "Paint it", sTr: "Boyala onu" }],
+            43: [{ w: "Math", t: "Matematik", e: "➗", sEn: "Count numbers", sTr: "Sayıları say" }, { w: "Science", t: "Fen", e: "🧬", sEn: "Learn life", sTr: "Hayatı öğren" }, { w: "Art", t: "Resim", e: "🎨", sEn: "Paint colors", sTr: "Renkleri boya" }, { w: "Music", t: "Müzik", e: "🎵", sEn: "Sing song", sTr: "Şarkı söyle" }, { w: "History", t: "Tarih", e: "🏺", sEn: "Old times", sTr: "Eski zamanlar" }],
+            44: [{ w: "Painting", t: "Boyama", e: "🖌️", sEn: "Art paint", sTr: "Sanat boyası" }, { w: "Gaming", t: "Oyun", e: "🎮", sEn: "Play games", sTr: "Oyun oyna" }, { w: "Cooking", t: "Yemek", e: "🍳", sEn: "Cook food", sTr: "Yemek pişir" }, { w: "Reading", t: "Okuma", e: "📖", sEn: "Read books", sTr: "Kitap oku" }, { w: "Fishing", t: "Balıkçılık", e: "🎣", sEn: "Catch fish", sTr: "Balık tut" }],
+            45: [{ w: "Trumpet", t: "Trompet", e: "🎺", sEn: "Loud sound", sTr: "Yüksek ses" }, { w: "Saxophone", t: "Saksafon", e: "🎷", sEn: "Jazz music", sTr: "Caz müzik" }, { w: "Mic", t: "Mikrofon", e: "🎤", sEn: "Sing loud", sTr: "Bağırarak söyle" }, { w: "Headphones", t: "Kulaklık", e: "🎧", sEn: "Listen music", sTr: "Müzik dinle" }, { w: "Radio", t: "Radyo", e: "📻", sEn: "Turn on", sTr: "Aç şunu" }],
+            46: [{ w: "Tractor", t: "Traktör", e: "🚜", sEn: "Farm work", sTr: "Çiftlik işi" }, { w: "Crane", t: "Vinç", e: "🏗️", sEn: "Lift heavy", sTr: "Ağır kaldır" }, { w: "Truck", t: "Kamyon", e: "🚚", sEn: "Carry load", sTr: "Yük taşı" }, { w: "Drill", t: "Matkap", e: "🔩", sEn: "Drill hole", sTr: "Delik aç" }, { w: "Cone", t: "Koni", e: "⚠️", sEn: "Stop here", sTr: "Burada dur" }],
+            47: [{ w: "Ambulance", t: "Ambulans", e: "🚑", sEn: "Help coming", sTr: "Yardım geliyor" }, { w: "Police Car", t: "Polis", e: "🚓", sEn: "Fast car", sTr: "Hızlı araba" }, { w: "Fire Truck", t: "İtfaiye", e: "🚒", sEn: "Water truck", sTr: "Su kamyonu" }, { w: "Taxi", t: "Taksi", e: "🚕", sEn: "Yellow taxi", sTr: "Sarı taksi" }, { w: "Siren", t: "Siren", e: "🚨", sEn: "Loud noise", sTr: "Gürültülü ses" }],
+            48: [{ w: "Octopus", t: "Ahtapot", e: "🐙", sEn: "Eight arms", sTr: "Sekiz kol" }, { w: "Whale", t: "Balina", e: "🐋", sEn: "Big whale", sTr: "Büyük balina" }, { w: "Dolphin", t: "Yunus", e: "🐬", sEn: "Smart fish", sTr: "Akıllı balık" }, { w: "Crab", t: "Yengeç", e: "🦀", sEn: "Walk side", sTr: "Yan yürü" }, { w: "Shark", t: "Köpekb.", e: "🦈", sEn: "Sharp teeth", sTr: "Keskin dişler" }],
+            49: [{ w: "Cow", t: "İnek", e: "🐄", sEn: "Moo moo", sTr: "Möö möö" }, { w: "Pig", t: "Domuz", e: "🐖", sEn: "Oink oink", sTr: "Oink oink" }, { w: "Sheep", t: "Koyun", e: "🐑", sEn: "Soft wool", sTr: "Yumuşak yün" }, { w: "Horse", t: "At", e: "🐎", sEn: "Run fast", sTr: "Hızlı koş" }, { w: "Chicken", t: "Tavuk", e: "🐔", sEn: "Lay eggs", sTr: "Yumurta yap" }],
+            50: [{ w: "Parrot", t: "Papağan", e: "🦜", sEn: "Talk bird", sTr: "Konuşan kuş" }, { w: "Eagle", t: "Kartal", e: "🦅", sEn: "Fly high", sTr: "Yüksek uç" }, { w: "Owl", t: "Baykuş", e: "🦉", sEn: "Wise bird", sTr: "Bilge kuş" }, { w: "Duck", t: "Ördek", e: "🦆", sEn: "Swim swim", sTr: "Yüz yüz" }, { w: "Penguin", t: "Penguen", e: "🐧", sEn: "Cold bird", sTr: "Soğuk kuş" }],
+            51: [{ w: "Butterfly", t: "Kelebek", e: "🦋", sEn: "Colorful fly", sTr: "Renkli uçuş" }, { w: "Bee", t: "Arı", e: "🐝", sEn: "Make honey", sTr: "Bal yap" }, { w: "Ant", t: "Karınca", e: "🐜", sEn: "Work hard", sTr: "Çok çalış" }, { w: "Spider", t: "Örümcek", e: "🕷️", sEn: "Eight legs", sTr: "Sekiz bacak" }, { w: "Ladybug", t: "Uğur B.", e: "🐞", sEn: "Lucky bug", sTr: "Şans böceği" }],
+            52: [{ w: "Tree", t: "Ağaç", e: "🌳", sEn: "Big tree", sTr: "Büyük ağaç" }, { w: "Flower", t: "Çiçek", e: "🌸", sEn: "Smell good", sTr: "Güzel kok" }, { w: "Mushroom", t: "Mantar", e: "🍄", sEn: "Red hat", sTr: "Kırmızı şapka" }, { w: "Leaf", t: "Yaprak", e: "🍃", sEn: "Green leaf", sTr: "Yeşil yaprak" }, { w: "Cactus", t: "Kaktüs", e: "🌵", sEn: "Spiky plant", sTr: "Dikenli bitki" }]
         };
 
         let st;
@@ -2943,6 +2969,17 @@
 
         // goHome is defined at the end of the file
 
+        function setQuarter(q) {
+            currentQuarter = q;
+
+            // Update buttons
+            document.querySelectorAll('.quarter-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-q${q}`).classList.add('active');
+
+            triggerMascotAnimation('bounce');
+            renderWeeks();
+        }
+
         function renderWeeks() {
             try {
                 showScreen('screen-weeks');
@@ -2953,16 +2990,22 @@
 
                 if (!icons || icons.length === 0) { alert('Error: Icons missing'); return; }
 
-                icons.forEach((icon, i) => {
+                // Quarter Logic: 13 weeks per quarter
+                const startWeek = (currentQuarter - 1) * 13 + 1;
+                const endWeek = startWeek + 12;
+
+                for (let i = startWeek - 1; i < endWeek; i++) {
+                    if (i >= icons.length) break; // Safety check
+
                     const n = i + 1;
                     const lock = !st.unlocked.includes(n);
                     const box = document.createElement('div');
                     box.className = `week-card ${lock ? 'locked' : ''}`;
-                    box.style.animationDelay = `${i * 0.08}s`;
+                    box.style.animationDelay = `${(i % 13) * 0.08}s`;
 
                     // İLERLEME HESAPLAMA
                     const pool = db[n] || [];
-                    const targetTotal = 35;
+                    const targetTotal = 35; // 5 kelime * (1 okuma + 1 dinleme + 5 quiz) basitleştirilmiş
                     const learnedCount = pool.filter(x => st.learned && st.learned[x.w]).length;
                     const percentage = Math.round((learnedCount / targetTotal) * 100);
 
@@ -2971,10 +3014,14 @@
                         progressHTML = `<div class="progress-badge">${percentage}%</div>`;
                     }
 
+                    // TOPIC TEASER (New Feature)
+                    const topicName = topics[i] || "Sürpriz!";
+
                     box.innerHTML = `
                         ${progressHTML}
-                        <span class="emoji">${icon}</span>
+                        <span class="emoji">${icons[i]}</span>
                         <span class="week-num">Hafta ${n}</span>
+                        <span style="font-size:0.8rem; color:#ffd700; margin-top:2px; font-weight:700; text-shadow:0 1px 2px rgba(0,0,0,0.5)">${topicName}</span>
                     `;
 
                     if (!lock) {
@@ -2982,14 +3029,21 @@
                             triggerMascotAnimation('bounce');
                             openMap(n);
                         };
+                    } else {
+                        // Kilitli kartlara tıklayınca uyar
+                        box.onclick = () => {
+                            // Basit bir sallanma efekti veya ses eklenebilir
+                            box.style.transform = "translateX(5px)";
+                            setTimeout(() => box.style.transform = "none", 100);
+                        }
                     }
                     g.appendChild(box);
-                });
+                }
 
-                // Karşılama animasyonu
-                triggerMascotAnimation('dance');
+                // Maskot animasyonu sadece Q1'de ilk açılışta veya sayfa değişimlerinde hoş olabilir
+                // triggerMascotAnimation('dance'); 
             } catch (e) {
-                alert('Render Error: ' + e.message);
+                alert('Render Render Error: ' + e.message);
                 console.error(e);
             }
         }
