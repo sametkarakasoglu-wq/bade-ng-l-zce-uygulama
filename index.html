@@ -2679,38 +2679,37 @@
         <div class="huge-btn" onclick="showStickers()">🎁</div>
     </header>
 
+    <!-- GLOBAL OVERLAY: QUARTER SELECTION (Moved here to fix z-index/overlap issues) -->
+    <div id="global-quarter-select"
+        style="position: absolute; top: 110px; left: 0; width: 100%; height: auto; max-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 2000; pointer-events: none;">
+        <!-- Title -->
+        <div
+            style="text-align:center; margin-bottom: 5px; animation: floatCard 4s infinite ease-in-out; pointer-events: auto;">
+            <h1 class="neon-title" style="margin:0; font-size: 2.5rem; text-shadow: 0 0 15px rgba(0,0,0,0.8);">
+                Dünya Seç Bade! 🗺️</h1>
+        </div>
+
+        <!-- Dropdown Trigger Button -->
+        <div style="pointer-events: auto;">
+            <button id="quarter-title-btn" onclick="toggleQuarterMenu()">
+                <span id="quarter-label">Q1: Hafta 1-13</span>
+                <span style="font-size:0.8rem">▼</span>
+            </button>
+        </div>
+
+        <!-- Hidden Menu -->
+        <div id="quarter-menu" class="quarter-menu" style="pointer-events: auto;">
+            <div class="quarter-btn active" onclick="setQuarter(1)">Q1: Hafta 1-13</div>
+            <div class="quarter-btn" onclick="setQuarter(2)">Q2: Hafta 14-26</div>
+            <div class="quarter-btn" onclick="setQuarter(3)">Q3: Hafta 27-39</div>
+            <div class="quarter-btn" onclick="setQuarter(4)">Q4: Hafta 40-52</div>
+        </div>
+    </div>
+
     <div class="game-area">
         <!-- HAFTALAR EKRANI (Ana Menü) -->
         <div id="screen-weeks" class="screen">
-
-            <!-- Quarter Selection - TOP HEADER STYLE -->
-            <!-- Quarter Selection - FIXED TOP HEADER -->
-            <div
-                style="position: absolute; top: 110px; left: 0; width: 100%; height: auto; max-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 50; pointer-events: none;">
-                <!-- Title -->
-                <div
-                    style="text-align:center; margin-bottom: 5px; animation: floatCard 4s infinite ease-in-out; pointer-events: auto;">
-                    <h1 class="neon-title" style="margin:0; font-size: 2.5rem; text-shadow: 0 0 15px rgba(0,0,0,0.8);">
-                        Dünya Seç Bade! 🗺️</h1>
-                </div>
-
-                <!-- Dropdown Trigger Button -->
-                <div style="pointer-events: auto;">
-                    <button id="quarter-title-btn" onclick="toggleQuarterMenu()">
-                        <span id="quarter-label">Q1: Hafta 1-13</span>
-                        <span style="font-size:0.8rem">▼</span>
-                    </button>
-                </div>
-
-                <!-- Hidden Menu -->
-                <div id="quarter-menu" class="quarter-menu" style="pointer-events: auto;">
-                    <div class="quarter-btn active" onclick="setQuarter(1)">Q1: Hafta 1-13</div>
-                    <div class="quarter-btn" onclick="setQuarter(2)">Q2: Hafta 14-26</div>
-                    <div class="quarter-btn" onclick="setQuarter(3)">Q3: Hafta 27-39</div>
-                    <div class="quarter-btn" onclick="setQuarter(4)">Q4: Hafta 40-52</div>
-                </div>
-
-            </div>
+            <!-- Quarter Selection Moved Out Global -->
         </div>
         <div id="grid-weeks">
             <!-- JS ile doldurulacak -->
