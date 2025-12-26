@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bade-english-v4';
+const CACHE_NAME = 'bade-english-v5';
 const urlsToCache = [
     './index.html',
     './manifest.json',

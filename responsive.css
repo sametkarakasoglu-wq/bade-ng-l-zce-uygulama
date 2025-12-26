@@ -12,15 +12,15 @@
     .lesson-card {
         width: 85%;
         max-width: none;
-        padding: 25px;
+        padding: 20px;
     }
 
     .word-title {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     .emoji-lesson {
-        font-size: 10rem;
+        font-size: 8rem;
     }
 
     .sentence-en {
@@ -39,152 +39,163 @@
     #grid-weeks {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 5px;
-        padding: 60px 5px 10px;
+        padding: 55px 5px 5px;
     }
 
     .week-card {
-        padding: 5px;
-        border-radius: 15px;
+        padding: 4px;
+        border-radius: 12px;
     }
 
     .week-card .emoji {
-        font-size: 2.2rem;
-        /* Daha küçük */
+        font-size: 2rem;
     }
 
     .week-card .week-num {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         margin-top: 2px;
     }
 
     /* Header Adjustments */
     header {
-        height: 60px;
-        /* Daha kısa header */
-        padding: 5px 10px;
-        background: rgba(0, 0, 0, 0.3);
-        /* Visibility */
+        height: 50px;
+        /* Daha da kısa */
+        padding: 2px 10px;
+        background: rgba(0, 0, 0, 0.4);
     }
 
     .huge-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1.4rem;
     }
 
     .star-box {
-        padding: 4px 12px;
-        font-size: 1rem;
-        border-width: 2px;
+        padding: 2px 10px;
+        font-size: 0.9rem;
+        border-width: 1px;
+        border-radius: 15px;
     }
 
     .star-box .living-emoji {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
-    /* Lesson Card Adjustments - SUPER COMPACT */
+    /* Lesson Card Adjustments - ULTRA COMPACT */
     .lesson-card {
-        width: 96% !important;
-        /* Ekrana tam yay */
+        width: 98% !important;
         max-width: none;
-        padding: 15px 10px;
-        /* Kenar boşluklarını azalt */
+        padding: 10px 5px;
+        /* Minimum boşluk */
         gap: 5px;
-        border-width: 2px;
-        border-radius: 20px;
-        margin-top: 10px;
-        min-height: auto;
-        /* Yüksekliği serbest bırak */
+        border-width: 1px;
+        border-radius: 15px;
+        margin-top: 5px;
     }
 
     .word-title {
-        font-size: 3rem !important;
-        /* Çok daha küçük */
-        line-height: 1;
+        font-size: 2.2rem !important;
+        /* Bayağı küçüldü */
+        line-height: 1.1;
+        letter-spacing: 0;
+        margin-top: 5px;
     }
 
     .word-tr {
-        font-size: 1.8rem !important;
-        margin-bottom: 5px;
+        font-size: 1.4rem !important;
+        margin: 2px 0;
     }
 
     .emoji-lesson {
-        font-size: 6rem !important;
-        /* Emojiyi küçült */
-        margin: 5px 0;
+        font-size: 5rem !important;
+        /* Emoji küçüldü */
+        margin: 2px 0;
     }
 
     /* Cümle Kutuları */
     .sentence-box {
-        gap: 8px;
+        gap: 5px;
         width: 100%;
     }
 
     .sent-btn {
-        padding: 10px;
-        border-radius: 12px;
+        padding: 8px 5px;
+        /* Buton içi boşluk azaldı */
+        border-radius: 10px;
         width: 100%;
+        border-width: 1px;
     }
 
     .sentence-en {
-        font-size: 1.1rem !important;
-        line-height: 1.2;
+        font-size: 1rem !important;
+        line-height: 1.1;
     }
 
     .sentence-tr {
-        font-size: 0.9rem !important;
-        line-height: 1.2;
+        display: none;
+        /* Telefondan Türkçe cümleyi gizleyelim ki yer açılsın (Opsiyonel ama yer kazandırır) */
     }
 
-    /* Controls - Compact */
+    /* Telebimiz Türkçe çeviriyi görmekse aşağıdaki bloğu aktif et, yukarıdakini sil */
+    /*
+    .sentence-tr {
+        font-size: 0.8rem !important;
+        margin-top: 2px;
+    }
+    */
+
+    /* Controls - Ultra Compact */
     .controls {
         gap: 15px;
         margin-top: 5px;
+        margin-bottom: 5px;
     }
 
     .play-btn,
     .mic-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.4rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+        box-shadow: 0 0 10px currentColor;
     }
 
     /* Nav Arrows */
     .nav-arrows {
-        bottom: 10px;
-        padding: 0 10px;
+        bottom: 5px;
+        padding: 0 5px;
     }
 
     .arrow-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
     }
 
     /* Map Screen - Compact */
     .map-container {
-        padding: 15px 5px;
-        width: 98%;
+        padding: 10px 5px;
+        width: 99%;
         border-radius: 15px;
+        border-width: 2px;
     }
 
     .map-path {
-        gap: 10px;
+        gap: 8px;
     }
 
     .day-island {
-        width: 85px;
-        min-height: 100px;
+        width: 80px;
+        min-height: 90px;
         padding: 5px;
     }
 
     .day-island .day-emoji {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .day-island .day-num {
-        font-size: 0.8rem;
-        padding: 3px 8px;
+        font-size: 0.75rem;
+        padding: 2px 6px;
     }
 }
 
@@ -199,14 +210,6 @@
         font-size: 1.8rem;
     }
 
-    .word-title {
-        font-size: 2.5rem !important;
-    }
-
-    .emoji-lesson {
-        font-size: 5rem !important;
-    }
-
     .play-btn,
     .mic-btn {
         width: 40px;
@@ -215,6 +218,23 @@
     }
 
     .arrow-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* SMALL MOBILE - iPhone SE/Mini Adjustments */
+@media (max-width: 380px) {
+    .word-title {
+        font-size: 1.8rem !important;
+    }
+
+    .emoji-lesson {
+        font-size: 4rem !important;
+    }
+
+    .play-btn,
+    .mic-btn {
         width: 40px;
         height: 40px;
     }
