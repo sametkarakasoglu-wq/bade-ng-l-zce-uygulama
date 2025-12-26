@@ -38,86 +38,102 @@
     /* 3 Column Grid for Weeks */
     #grid-weeks {
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 8px;
-        padding: 60px 10px 10px;
-        /* More Header Space */
+        gap: 5px;
+        padding: 60px 5px 10px;
     }
 
     .week-card {
         padding: 5px;
+        border-radius: 15px;
     }
 
     .week-card .emoji {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        /* Daha küçük */
     }
 
     .week-card .week-num {
-        font-size: 0.9rem;
-        margin-top: 5px;
+        font-size: 0.8rem;
+        margin-top: 2px;
     }
 
     /* Header Adjustments */
     header {
-        height: 70px;
-        padding: 5px 15px;
+        height: 60px;
+        /* Daha kısa header */
+        padding: 5px 10px;
         background: rgba(0, 0, 0, 0.3);
         /* Visibility */
     }
 
     .huge-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.8rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
 
     .star-box {
-        padding: 5px 15px;
-        font-size: 1.2rem;
+        padding: 4px 12px;
+        font-size: 1rem;
         border-width: 2px;
     }
 
     .star-box .living-emoji {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
-    /* Lesson Card Adjustments - Compact Mode */
+    /* Lesson Card Adjustments - SUPER COMPACT */
     .lesson-card {
-        width: 95%;
-        padding: 15px;
-        gap: 10px;
+        width: 96% !important;
+        /* Ekrana tam yay */
+        max-width: none;
+        padding: 15px 10px;
+        /* Kenar boşluklarını azalt */
+        gap: 5px;
         border-width: 2px;
-        border-radius: 25px;
+        border-radius: 20px;
+        margin-top: 10px;
+        min-height: auto;
+        /* Yüksekliği serbest bırak */
     }
 
     .word-title {
-        font-size: 2.8rem;
-        letter-spacing: 1px;
+        font-size: 3rem !important;
+        /* Çok daha küçük */
+        line-height: 1;
     }
 
     .word-tr {
-        font-size: 1.8rem;
+        font-size: 1.8rem !important;
+        margin-bottom: 5px;
     }
 
     .emoji-lesson {
-        font-size: 6rem;
+        font-size: 6rem !important;
+        /* Emojiyi küçült */
         margin: 5px 0;
     }
 
+    /* Cümle Kutuları */
     .sentence-box {
-        gap: 10px;
+        gap: 8px;
+        width: 100%;
     }
 
     .sent-btn {
-        padding: 12px;
-        border-radius: 15px;
+        padding: 10px;
+        border-radius: 12px;
+        width: 100%;
     }
 
     .sentence-en {
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
+        line-height: 1.2;
     }
 
     .sentence-tr {
-        font-size: 0.9rem;
+        font-size: 0.9rem !important;
+        line-height: 1.2;
     }
 
     /* Controls - Compact */
@@ -128,47 +144,47 @@
 
     .play-btn,
     .mic-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
     }
 
     /* Nav Arrows */
     .nav-arrows {
-        bottom: 15px;
-        padding: 0 15px;
+        bottom: 10px;
+        padding: 0 10px;
     }
 
     .arrow-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
     }
 
     /* Map Screen - Compact */
     .map-container {
-        padding: 15px;
+        padding: 15px 5px;
         width: 98%;
-        border-radius: 20px;
+        border-radius: 15px;
     }
 
     .map-path {
-        gap: 15px;
+        gap: 10px;
     }
 
     .day-island {
-        width: 90px;
-        min-height: 110px;
-        padding: 8px;
+        width: 85px;
+        min-height: 100px;
+        padding: 5px;
     }
 
     .day-island .day-emoji {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .day-island .day-num {
-        font-size: 0.9rem;
-        padding: 4px 10px;
+        font-size: 0.8rem;
+        padding: 3px 8px;
     }
 }
 
@@ -184,17 +200,22 @@
     }
 
     .word-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem !important;
     }
 
     .emoji-lesson {
-        font-size: 5rem;
+        font-size: 5rem !important;
     }
 
     .play-btn,
     .mic-btn {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         font-size: 1.2rem;
+    }
+
+    .arrow-btn {
+        width: 40px;
+        height: 40px;
     }
 }
