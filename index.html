@@ -2566,25 +2566,75 @@
             margin-top: 5px;
         }
 
-        /* QUARTER BUTTONS */
-        .quarter-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+        /* QUARTER DROPDOWN */
+        #quarter-title-btn {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--neon-blue);
             color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 1rem;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1.2rem;
             font-weight: 800;
             cursor: pointer;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 15px rgba(0, 150, 255, 0.3);
+            z-index: 200;
         }
 
+        #quarter-title-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px var(--neon-blue);
+        }
+
+        .quarter-menu {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 40, 0.95);
+            border: 2px solid var(--neon-blue);
+            border-radius: 20px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            width: 200px;
+        }
+
+        .quarter-menu.open {
+            opacity: 1;
+            visibility: visible;
+            top: 70px;
+        }
+
+        .quarter-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .quarter-btn:hover,
         .quarter-btn.active {
             background: var(--neon-blue);
+            color: white;
             border-color: var(--neon-blue);
-            box-shadow: 0 0 20px var(--neon-blue);
-            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--neon-blue);
         }
     </style>
 </head>
@@ -2617,19 +2667,28 @@
     <div class="game-area">
         <!-- HAFTALAR EKRANI (Ana Menü) -->
         <div id="screen-weeks" class="screen">
-            <div style="text-align:center; margin-bottom:20px; animation: floatCard 4s infinite ease-in-out">
-                <h1 class="neon-title" style="margin:0">Dünya Seç Bade! 🗺️</h1>
-            </div>
 
-            <!-- Quarter Selection -->
-            <div class="quarter-nav"
-                style="display:flex; justify-content:center; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
-                <button id="btn-q1" class="quarter-btn active" onclick="setQuarter(1)">Q1 (1-13)</button>
-                <button id="btn-q2" class="quarter-btn" onclick="setQuarter(2)">Q2 (14-26)</button>
-                <button id="btn-q3" class="quarter-btn" onclick="setQuarter(3)">Q3 (27-39)</button>
-                <button id="btn-q4" class="quarter-btn" onclick="setQuarter(4)">Q4 (40-52)</button>
+            <!-- Quarter Selection - TOP HEADER STYLE -->
+            <div
+                style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 20px; z-index: 50;">
+                <div style="text-align:center; margin-bottom:10px; animation: floatCard 4s infinite ease-in-out">
+                    <h1 class="neon-title" style="margin:0; font-size: 2.5rem;">Dünya Seç Bade! 🗺️</h1>
+                </div>
+
+                <!-- Dropdown Trigger Button -->
+                <button id="quarter-title-btn" onclick="toggleQuarterMenu()">
+                    <span id="quarter-label">Q1: Hafta 1-13</span>
+                    <span style="font-size:0.8rem">▼</span>
+                </button>
+
+                <!-- Hidden Menu -->
+                <div id="quarter-menu" class="quarter-menu">
+                    <div class="quarter-btn active" onclick="setQuarter(1)">Q1: Hafta 1-13</div>
+                    <div class="quarter-btn" onclick="setQuarter(2)">Q2: Hafta 14-26</div>
+                    <div class="quarter-btn" onclick="setQuarter(3)">Q3: Hafta 27-39</div>
+                    <div class="quarter-btn" onclick="setQuarter(4)">Q4: Hafta 40-52</div>
+                </div>
             </div>
-            Bade! 🗺️</h1>
         </div>
         <div id="grid-weeks">
             <!-- JS ile doldurulacak -->
@@ -2969,12 +3028,43 @@
 
         // goHome is defined at the end of the file
 
+        function toggleQuarterMenu() {
+            const m = document.getElementById('quarter-menu');
+            m.classList.toggle('open');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            const m = document.getElementById('quarter-menu');
+            const btn = document.getElementById('quarter-title-btn');
+            if (!m || !btn) return;
+            if (!m.contains(e.target) && !btn.contains(e.target)) {
+                m.classList.remove('open');
+            }
+        });
+
         function setQuarter(q) {
             currentQuarter = q;
 
-            // Update buttons
+            // Update Label text
+            const labels = {
+                1: "Q1: Hafta 1-13",
+                2: "Q2: Hafta 14-26",
+                3: "Q3: Hafta 27-39",
+                4: "Q4: Hafta 40-52"
+            };
+            document.getElementById('quarter-label').innerText = labels[q];
+
+            // Close Menu
+            document.getElementById('quarter-menu').classList.remove('open');
+
+            // Update buttons highlighting inside menu
             document.querySelectorAll('.quarter-btn').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`btn-q${q}`).classList.add('active');
+            // Find the btn in the menu that corresponds to this value (simplified check)
+            // Since we don't have IDs on them anymore, we rebuild logic or just rely on re-render.
+            // Actually let's just highlight the one clicked or reset all.
+            const menuBtns = document.getElementById('quarter-menu').children;
+            if (menuBtns[q - 1]) menuBtns[q - 1].classList.add('active');
 
             triggerMascotAnimation('bounce');
             renderWeeks();
