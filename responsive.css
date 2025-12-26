@@ -1,0 +1,149 @@
+/* ========================================== */
+/*         MOBILE RESPONSIVE RULES            */
+/* ========================================== */
+
+/* TABLET (iPad Portrait / Small Laptops) - 1024px and below */
+@media (max-width: 1024px) {
+    #grid-weeks {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 15px;
+    }
+
+    .lesson-card {
+        width: 90%;
+        max-width: none;
+        padding: 30px;
+    }
+    
+    .word-title {
+        font-size: 5rem;
+    }
+    
+    .emoji-lesson {
+        font-size: 12rem;
+    }
+}
+
+/* MOBILE (Phones) - 768px and below */
+@media (max-width: 768px) {
+    /* 3 Column Grid for Weeks */
+    #grid-weeks {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px;
+        padding: 50px 10px 10px; /* Space for header */
+    }
+    
+    .week-card .emoji {
+        font-size: 2.5rem;
+    }
+
+    .week-card .week-num {
+        font-size: 1rem;
+    }
+    
+    /* Header Adjustments */
+    header {
+        height: 80px;
+        padding: 10px 20px;
+    }
+    
+    .huge-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+    
+    .star-box {
+        padding: 8px 20px;
+        font-size: 1.5rem;
+    }
+    
+    /* Lesson Card Adjustments */
+    .lesson-card {
+        width: 95%;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .word-title {
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .word-tr {
+        font-size: 2.2rem;
+    }
+    
+    .emoji-lesson {
+        font-size: 8rem;
+        margin: 10px 0;
+    }
+    
+    .sentence-en {
+        font-size: 1.3rem;
+    }
+    
+    .sentence-tr {
+        font-size: 1.1rem;
+    }
+    
+    /* Controls */
+    .play-btn, .mic-btn {
+        width: 65px;
+        height: 65px;
+        font-size: 1.8rem;
+    }
+    
+    /* Nav Arrows */
+    .nav-arrows {
+        bottom: 20px;
+        padding: 0 20px;
+    }
+    
+    .arrow-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    /* Map Screen */
+    .map-container {
+        padding: 20px;
+        width: 100%;
+        border-radius: 30px;
+    }
+    
+    .day-island {
+        width: 100px;
+        min-height: 120px;
+        padding: 10px;
+    }
+    
+    .day-island .day-emoji {
+        font-size: 2.2rem;
+    }
+}
+
+/* SMALL MOBILE - 480px and below */
+@media (max-width: 480px) {
+    /* 2 Column Grid for Weeks */
+    #grid-weeks {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .word-title {
+        font-size: 3rem;
+    }
+    
+    .emoji-lesson {
+        font-size: 7rem;
+    }
+    
+    .sent-btn {
+        padding: 15px;
+    }
+    
+    .controls {
+        gap: 15px;
+    }
+}
