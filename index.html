@@ -1,0 +1,3678 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Bade'nin İngilizce Dünyası | 10/10 Macera 🦉</title>
+    <!-- PWA Settings -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Bade English">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/color/180/owl-touch.png">
+    <meta name="theme-color" content="#6b21a8">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Outfit:wght@800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-blue: #00ffff;
+            --neon-green: #00ff88;
+            --neon-yellow: #ffff00;
+            --neon-orange: #ff8800;
+            --deep-purple: #1a0033;
+            --cosmic-blue: #0d0d2b;
+            --star-white: #ffffff;
+            --glow: 0 0 20px;
+        }
+
+        /* ========================================== */
+        /*         COSMIC SPACE BACKGROUND           */
+        /* ========================================== */
+
+        @keyframes cosmicPulse {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+                filter: hue-rotate(0deg);
+            }
+
+            50% {
+                background-position: 100% 50%;
+                filter: hue-rotate(30deg);
+            }
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(50px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(50px) rotate(-360deg);
+            }
+        }
+
+        @keyframes neonPulse {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+                filter: brightness(1);
+            }
+
+            50% {
+                text-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 80px currentColor;
+                filter: brightness(1.3);
+            }
+        }
+
+        @keyframes cardFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotateX(0deg) rotateY(0deg);
+            }
+
+            25% {
+                transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
+            }
+
+            75% {
+                transform: translateY(-10px) rotateX(-5deg) rotateY(5deg);
+            }
+        }
+
+        @keyframes rainbowBorder {
+            0% {
+                border-color: #ff0000;
+                box-shadow: 0 0 30px #ff0000;
+            }
+
+            17% {
+                border-color: #ff8800;
+                box-shadow: 0 0 30px #ff8800;
+            }
+
+            33% {
+                border-color: #ffff00;
+                box-shadow: 0 0 30px #ffff00;
+            }
+
+            50% {
+                border-color: #00ff00;
+                box-shadow: 0 0 30px #00ff00;
+            }
+
+            67% {
+                border-color: #00ffff;
+                box-shadow: 0 0 30px #00ffff;
+            }
+
+            83% {
+                border-color: #ff00ff;
+                box-shadow: 0 0 30px #ff00ff;
+            }
+
+            100% {
+                border-color: #ff0000;
+                box-shadow: 0 0 30px #ff0000;
+            }
+        }
+
+        @keyframes megaBounce {
+
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            25% {
+                transform: scale(1.2) rotate(-10deg);
+            }
+
+            50% {
+                transform: scale(0.9) rotate(10deg);
+            }
+
+            75% {
+                transform: scale(1.1) rotate(-5deg);
+            }
+        }
+
+        @keyframes slideInBounce {
+            0% {
+                transform: translateY(-100px) scale(0);
+                opacity: 0;
+            }
+
+            60% {
+                transform: translateY(20px) scale(1.1);
+                opacity: 1;
+            }
+
+            80% {
+                transform: translateY(-10px) scale(0.95);
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glowPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(255, 255, 255, 0.5), inset 0 0 30px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Fredoka', sans-serif;
+            background: linear-gradient(135deg, #1a0033 0%, #0d0d2b 30%, #1a0033 60%, #2d1b4e 100%);
+            background-size: 400% 400%;
+            animation: cosmicPulse 20s ease infinite;
+            color: white;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* FLOATING PARTICLES */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            border-radius: 50%;
+            animation: floatUp linear infinite;
+            z-index: 1;
+        }
+
+        .star {
+            position: fixed;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+            box-shadow: 0 0 10px white;
+            z-index: 1;
+        }
+
+        /* ORBITING PLANETS */
+        .orbit-container {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            z-index: 2;
+        }
+
+        .orbiting-planet {
+            position: absolute;
+            font-size: 2rem;
+            animation: orbit 10s linear infinite;
+        }
+
+        /* ========================================== */
+        /*         CINEMATIC HEADER                  */
+        /* ========================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        header>* {
+            pointer-events: auto;
+        }
+
+        /* HEADER BUTTONS - OWL STYLE */
+        .huge-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            cursor: pointer;
+            filter: drop-shadow(0 0 20px rgba(255, 200, 100, 0.6));
+            transition: all 0.4s ease;
+            animation: megaBounce 5s infinite ease-in-out;
+        }
+
+        .huge-btn:hover {
+            transform: scale(1.4);
+            filter: drop-shadow(0 0 40px rgba(255, 200, 100, 1)) drop-shadow(0 0 80px rgba(255, 150, 50, 0.8));
+        }
+
+        .huge-btn:active {
+            transform: scale(1.1);
+        }
+
+        /* MEGA STAR BOX */
+        .star-box {
+            background: linear-gradient(145deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 140, 0, 0.3) 100%);
+            padding: 15px 40px;
+            border-radius: 60px;
+            font-size: 2rem;
+            font-weight: 800;
+            border: 4px solid var(--neon-yellow);
+            box-shadow:
+                0 0 20px var(--neon-yellow),
+                0 0 40px rgba(255, 255, 0, 0.3),
+                inset 0 0 30px rgba(255, 255, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--neon-yellow);
+            text-shadow: 0 0 20px var(--neon-yellow);
+            animation: neonPulse 2s infinite ease-in-out;
+        }
+
+        .star-box .living-emoji {
+            font-size: 2.5rem;
+            animation: megaBounce 3s infinite ease-in-out;
+        }
+
+        /* ========================================== */
+        /*         FULL SCREEN GAME AREA             */
+        /* ========================================== */
+
+        .game-area {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding-top: 100px;
+        }
+
+        /* ========================================== */
+        /*         CINEMATIC SCREENS                 */
+        /* ========================================== */
+
+        .screen {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 100px);
+            display: none !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .screen.active {
+            display: flex !important;
+            animation: slideInBounce 0.6s ease-out;
+        }
+
+        /* CARTOON PAGE FLIP ANIMATIONS */
+        @keyframes flipRight {
+            0% {
+                transform: perspective(1000px) rotateY(0deg) scale(1);
+                opacity: 1;
+            }
+
+            40% {
+                transform: perspective(1000px) rotateY(-25deg) scale(0.9);
+                opacity: 0.7;
+            }
+
+            60% {
+                transform: perspective(1000px) rotateY(15deg) scale(0.95);
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: perspective(1000px) rotateY(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes flipLeft {
+            0% {
+                transform: perspective(1000px) rotateY(0deg) scale(1);
+                opacity: 1;
+            }
+
+            40% {
+                transform: perspective(1000px) rotateY(25deg) scale(0.9);
+                opacity: 0.7;
+            }
+
+            60% {
+                transform: perspective(1000px) rotateY(-15deg) scale(0.95);
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: perspective(1000px) rotateY(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* MAIN MENU SCREEN - WEEKS */
+        #screen-weeks {
+            background: radial-gradient(ellipse at center, rgba(100, 50, 150, 0.3) 0%, transparent 70%);
+            justify-content: flex-start;
+            padding-top: 20px;
+        }
+
+        /* NEON TITLE */
+        .neon-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            text-shadow:
+                0 0 10px var(--neon-blue),
+                0 0 20px var(--neon-blue),
+                0 0 40px var(--neon-blue),
+                0 0 80px var(--neon-blue);
+            margin-bottom: 30px;
+            animation: neonPulse 3s infinite ease-in-out;
+            text-align: center;
+        }
+
+        /* ========================================== */
+        /*         3D FLOATING WEEK CARDS            */
+        /* ========================================== */
+
+        #grid-weeks {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            max-width: 100%;
+            width: 100%;
+            padding: 10px 20px;
+        }
+
+        .week-card {
+            position: relative;
+            width: 100%;
+            background: transparent;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            padding: 8px;
+        }
+
+        .week-card:hover {
+            transform: scale(1.2);
+        }
+
+        .week-card:hover .emoji {
+            filter: drop-shadow(0 0 40px rgba(255, 200, 100, 0.9)) drop-shadow(0 0 60px rgba(255, 150, 50, 0.6));
+        }
+
+        .week-card .emoji {
+            font-size: 3rem;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+            animation: megaBounce 4s infinite ease-in-out;
+            transition: all 0.3s ease;
+        }
+
+        .week-card .week-num {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 20px currentColor, 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin-top: 10px;
+        }
+
+        .week-card .progress-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+            color: #003322;
+            font-size: 1rem;
+            font-weight: 900;
+            padding: 8px 14px;
+            border-radius: 20px;
+            box-shadow:
+                0 0 25px rgba(0, 255, 136, 0.6),
+                0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .week-card.locked {
+            filter: grayscale(0.8) brightness(0.4);
+            cursor: not-allowed;
+        }
+
+        .week-card.locked:hover {
+            transform: none;
+        }
+
+        /* ========================================== */
+        /*         MAP SCREEN - ADVENTURE PATH       */
+        /* ========================================== */
+
+        #screen-map {
+            background: radial-gradient(ellipse at top, rgba(0, 100, 150, 0.4) 0%, transparent 60%);
+        }
+
+        .map-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            text-shadow:
+                0 0 20px var(--neon-orange),
+                0 0 40px var(--neon-orange);
+            margin-bottom: 30px;
+            animation: neonPulse 2s infinite;
+        }
+
+        .map-container {
+            width: 95%;
+            max-width: 1100px;
+            background: linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.5),
+                inset 0 0 50px rgba(255, 255, 255, 0.05);
+        }
+
+        .map-path {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* 3D DAY ISLANDS */
+        .day-island {
+            width: 140px;
+            min-height: 160px;
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 0.2) 0%,
+                    rgba(255, 255, 255, 0.1) 100%);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: slideInBounce 0.5s ease-out backwards;
+        }
+
+        .day-island:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .day-island:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .day-island:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .day-island:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .day-island:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .day-island:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+
+        .day-island:nth-child(7) {
+            animation-delay: 0.35s;
+        }
+
+        .day-island:hover {
+            transform: translateY(-15px) scale(1.1);
+            border-color: var(--neon-green);
+            box-shadow:
+                0 20px 50px rgba(0, 255, 136, 0.4),
+                0 0 30px var(--neon-green);
+        }
+
+        .day-island .day-num {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .day-island .day-emoji {
+            font-size: 3rem;
+            margin: 10px 0;
+            animation: megaBounce 3s infinite ease-in-out;
+        }
+
+        /* MEGA QUIZ ISLAND */
+        .quiz-island {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--neon-yellow) 0%, var(--neon-orange) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            cursor: pointer;
+            border: 5px solid white;
+            box-shadow:
+                0 0 30px var(--neon-yellow),
+                0 0 60px var(--neon-orange),
+                inset 0 0 30px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            animation: rainbowBorder 5s linear infinite, megaBounce 2s infinite ease-in-out;
+        }
+
+        .quiz-island:hover {
+            transform: scale(1.2) rotate(10deg);
+            box-shadow:
+                0 0 50px var(--neon-yellow),
+                0 0 100px var(--neon-orange);
+        }
+
+        /* ========================================== */
+        /*         CINEMATIC LESSON CARD             */
+        /* ========================================== */
+
+        #screen-card {
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(0, 150, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(255, 0, 150, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at center, rgba(50, 50, 100, 0.4) 0%, transparent 70%);
+        }
+
+        /* LESSON CARD - FULL SCREEN */
+        .lesson-card {
+            width: 95%;
+            max-width: 800px;
+            min-height: 80%;
+            background: linear-gradient(145deg,
+                    rgba(30, 30, 60, 0.9) 0%,
+                    rgba(20, 20, 50, 0.95) 100%);
+            border-radius: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            animation: slideInBounce 0.5s ease-out;
+            box-shadow:
+                0 0 50px rgba(0, 150, 255, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5),
+                inset 0 0 50px rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        /* MEGA WORD TITLE */
+        .word-title {
+            font-size: 6rem;
+            font-weight: 900;
+            color: white;
+            margin: 0;
+            text-shadow:
+                0 0 20px var(--neon-blue),
+                0 0 40px var(--neon-blue),
+                0 0 80px var(--neon-blue);
+            animation: neonPulse 2s infinite;
+            letter-spacing: 5px;
+        }
+
+        .word-tr {
+            font-size: 4rem;
+            color: var(--neon-pink);
+            font-weight: 700;
+            margin: 0;
+            text-shadow:
+                0 0 20px var(--neon-pink),
+                0 0 40px var(--neon-pink);
+        }
+
+        /* GIANT EMOJI */
+        .emoji-lesson {
+            font-size: 15rem;
+            margin: 20px 0;
+            filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.6));
+            animation: megaBounce 3s infinite ease-in-out;
+        }
+
+        /* NEON SENTENCE BUTTONS */
+        .sentence-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .sent-btn {
+            background: linear-gradient(145deg,
+                    rgba(0, 100, 200, 0.3) 0%,
+                    rgba(100, 0, 150, 0.3) 100%);
+            padding: 25px;
+            border-radius: 25px;
+            text-align: center;
+            cursor: pointer;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .sent-btn:hover {
+            border-color: var(--neon-green);
+            box-shadow:
+                0 0 30px var(--neon-green),
+                inset 0 0 20px rgba(0, 255, 136, 0.2);
+            transform: scale(1.03);
+        }
+
+        .sentence-en {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .sentence-tr {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 5px;
+        }
+
+        /* PLAY BUTTONS - BIG NEON */
+        .controls {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        .play-btn {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px currentColor;
+        }
+
+        .play-btn.btn-en {
+            background: linear-gradient(135deg, var(--neon-blue) 0%, #0066ff 100%);
+            color: white;
+            box-shadow: 0 0 30px var(--neon-blue);
+        }
+
+        .play-btn.btn-tr {
+            background: linear-gradient(135deg, var(--neon-pink) 0%, #ff0066 100%);
+            color: white;
+            box-shadow: 0 0 30px var(--neon-pink);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 50px currentColor;
+        }
+
+        /* LEARNED BUTTON */
+        .learned-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .learned-btn:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 20px var(--neon-green);
+        }
+
+        .learned-btn.active {
+            background: linear-gradient(135deg, var(--neon-green) 0%, #00aa66 100%);
+            border-color: var(--neon-green);
+            box-shadow: 0 0 30px var(--neon-green);
+        }
+
+        /* ========================================== */
+        /*         MAP SCREEN - FOREST THEME         */
+        /* ========================================== */
+
+        #screen-map {
+            background:
+                radial-gradient(ellipse at top, rgba(0, 100, 50, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(50, 100, 0, 0.3) 0%, transparent 50%);
+        }
+
+        .map-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            text-shadow:
+                0 0 20px var(--neon-green),
+                0 0 40px var(--neon-green);
+            margin-bottom: 30px;
+            animation: neonPulse 2s infinite;
+        }
+
+        .map-container {
+            width: 95%;
+            max-width: 1200px;
+            background: linear-gradient(145deg,
+                    rgba(30, 50, 30, 0.8) 0%,
+                    rgba(20, 40, 20, 0.9) 100%);
+            border-radius: 50px;
+            border: 4px solid rgba(0, 255, 136, 0.3);
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            box-shadow:
+                0 0 50px rgba(0, 255, 136, 0.2),
+                0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        .map-path {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* DAY ISLANDS - BIGGER */
+        .day-island {
+            width: 180px;
+            min-height: 200px;
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: slideInBounce 0.5s ease-out backwards;
+        }
+
+        .day-island:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .day-island:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .day-island:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .day-island:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .day-island:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .day-island:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+
+        .day-island:nth-child(7) {
+            animation-delay: 0.35s;
+        }
+
+        .day-island:hover {
+            transform: translateY(-15px) scale(1.1);
+            border-color: var(--neon-green);
+            box-shadow:
+                0 0 40px var(--neon-green),
+                0 20px 50px rgba(0, 255, 136, 0.4);
+        }
+
+        .day-island .day-num {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 0 15px var(--neon-blue);
+            margin-bottom: 10px;
+        }
+
+        .day-island .day-emoji {
+            font-size: 4rem;
+            margin: 10px 0;
+            animation: megaBounce 3s infinite ease-in-out;
+        }
+
+        .day-island .day-stats {
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 0 10px currentColor;
+        }
+
+        /* ========================================== */
+        /*         STORY MODAL - GOLDEN THEME        */
+        /* ========================================== */
+
+        #screen-story {
+            background: rgba(10, 5, 20, 0.98) !important;
+            z-index: 5000 !important;
+        }
+
+        .story-content {
+            background: linear-gradient(145deg,
+                    rgba(50, 40, 20, 0.95) 0%,
+                    rgba(30, 25, 10, 0.98) 100%);
+            border-radius: 50px;
+            padding: 60px;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            border: 6px solid var(--neon-yellow);
+            box-shadow:
+                0 0 60px rgba(255, 215, 0, 0.4),
+                0 0 100px rgba(255, 215, 0, 0.2),
+                inset 0 0 30px rgba(255, 215, 0, 0.1);
+            animation: slideInBounce 0.5s ease-out;
+        }
+
+        .story-content h2 {
+            font-size: 3rem;
+            color: var(--neon-yellow);
+            text-shadow: 0 0 20px var(--neon-yellow);
+            margin-bottom: 20px;
+        }
+
+        .story-text {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* RAINBOW STORY BUTTON */
+        .story-content .huge-btn {
+            width: 100%;
+            height: auto;
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 30px;
+            font-size: 2rem;
+            background: linear-gradient(90deg,
+                    #ff0000, #ff8800, #ffff00, #00ff00, #00ffff, #ff00ff, #ff0000);
+            background-size: 300% 100%;
+            animation: rainbowBorder 3s linear infinite;
+            border: none;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .story-content .huge-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+        }
+
+        /* ========================================== */
+        /*         QUIZ SCREEN - PURPLE THEME        */
+        /* ========================================== */
+
+        #screen-quiz {
+            background:
+                radial-gradient(ellipse at top left, rgba(150, 0, 255, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(255, 0, 150, 0.3) 0%, transparent 50%),
+                linear-gradient(180deg, #2d1b4e 0%, #1a0033 100%);
+        }
+
+        /* QUIZ QUESTION - FULL WIDTH */
+        .quiz-question {
+            width: 90%;
+            max-width: 900px;
+            background: linear-gradient(145deg,
+                    rgba(100, 50, 150, 0.5) 0%,
+                    rgba(50, 25, 100, 0.5) 100%);
+            border-radius: 40px;
+            padding: 40px;
+            text-align: center;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 50px rgba(150, 0, 255, 0.3);
+            margin-bottom: 40px;
+        }
+
+        .quiz-question h2 {
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 0 0 20px var(--neon-pink);
+            margin: 0;
+        }
+
+        /* QUIZ GRID - BIGGER CARDS */
+        .quiz-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .quiz-item {
+            width: 220px;
+            height: 220px;
+            background: linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.15) 0%,
+                    rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .quiz-item:hover {
+            transform: translateY(-20px) scale(1.15);
+            border-color: var(--neon-yellow);
+            box-shadow:
+                0 0 50px var(--neon-yellow),
+                0 30px 60px rgba(255, 255, 0, 0.4);
+            animation: rainbowBorder 2s linear infinite;
+        }
+
+        .quiz-item span:first-child {
+            font-size: 6rem;
+            margin-bottom: 15px;
+            animation: megaBounce 3s infinite ease-in-out;
+        }
+
+        .quiz-item span:last-child {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        /* QUIZ SPEAKER BUTTON */
+        .quiz-speaker {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--neon-pink) 0%, #ff0066 100%);
+            border: none;
+            font-size: 3rem;
+            cursor: pointer;
+            margin: 20px 0;
+            box-shadow: 0 0 40px var(--neon-pink);
+            transition: all 0.3s ease;
+            animation: glowPulse 2s infinite;
+        }
+
+        .quiz-speaker:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 60px var(--neon-pink);
+        }
+
+        /* NAV ARROWS - BIGGER */
+        .nav-arrows {
+            position: fixed;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+            pointer-events: none;
+            z-index: 500;
+        }
+
+        .arrow-btn {
+            pointer-events: auto;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            font-size: 2.5rem;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrow-btn:hover {
+            transform: scale(1.15);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px var(--neon-blue);
+        }
+
+        /* MASCOT - ANIMATED */
+        .mascot-ship {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .mascot-face {
+            font-size: 5rem;
+            cursor: pointer;
+            animation: megaBounce 4s infinite ease-in-out;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .mascot-face:hover {
+            transform: scale(1.3);
+        }
+
+        /* ============================================== */
+        /*          MASTERPIECE PREMIUM UI/UX             */
+        /* ============================================== */
+
+        /* CONFETTI CANVAS */
+        #confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* FLOATING PARTICLES - MAGICAL ATMOSPHERE */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* SCREEN VISIBILITY */
+        .screen {
+            position: absolute;
+            top: 90px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 90px);
+            display: none !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .screen.active {
+            display: flex !important;
+            z-index: 100;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        /* SCREEN BACKGROUNDS - COSMIC DARK THEME */
+        #screen-weeks {
+            background: transparent;
+            justify-content: center;
+        }
+
+        #screen-map {
+            background: transparent;
+        }
+
+        #screen-card {
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(0, 100, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(255, 0, 150, 0.15) 0%, transparent 50%);
+        }
+
+        #screen-quiz {
+            background:
+                radial-gradient(ellipse at top left, rgba(150, 0, 255, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(255, 0, 150, 0.3) 0%, transparent 50%);
+        }
+
+        #screen-stickers {
+            background:
+                radial-gradient(ellipse at center, rgba(255, 100, 150, 0.3) 0%, transparent 60%);
+        }
+
+        #screen-story {
+            background: rgba(5, 5, 15, 0.98) !important;
+            z-index: 5000 !important;
+        }
+
+        /* Week card styles moved to line ~450 - duplicate removed */
+
+        /* ============================================== */
+        /*              DAY ISLANDS (HARİTA)              */
+        /* ============================================== */
+
+        .map-container {
+            width: 100%;
+            max-width: none;
+            background: transparent;
+            border-radius: 0;
+            border: none;
+            padding: 30px;
+        }
+
+        .map-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .map-path {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .day-island {
+            width: 120px;
+            min-height: 140px;
+            background: transparent;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 15px;
+            animation: popIn 0.5s ease-out backwards;
+        }
+
+        .day-island:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .day-island:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .day-island:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .day-island:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .day-island:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .day-island:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+
+        .day-island:nth-child(7) {
+            animation-delay: 0.35s;
+        }
+
+        .day-island:hover {
+            transform: translateY(-18px) scale(1.08);
+            box-shadow:
+                0 0 50px rgba(0, 255, 200, 0.4),
+                0 0 80px rgba(0, 255, 200, 0.2),
+                0 35px 70px rgba(0, 0, 0, 0.5);
+        }
+
+        .day-island:active {
+            transform: scale(0.95);
+        }
+
+        .day-island .day-num {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: white;
+            background: linear-gradient(135deg, #00aaff 0%, #0066ff 100%);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            box-shadow: 0 5px 15px rgba(0, 150, 255, 0.4);
+        }
+
+        .day-island .day-emoji {
+            font-size: 3.5rem;
+            margin: 10px 0;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+            animation: megaBounce 4s infinite ease-in-out;
+        }
+
+        .day-island .day-stats {
+            font-size: 1.2rem;
+            color: #00ff88;
+            font-weight: 900;
+            text-shadow: 0 0 20px #00ff88;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 6px 14px;
+            border-radius: 15px;
+            margin-top: 5px;
+        }
+
+        .quiz-island {
+            width: 130px;
+            height: 130px;
+            background: linear-gradient(135deg, #FFE66D 0%, #FFA502 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            cursor: pointer;
+            border: 5px solid white;
+            box-shadow:
+                0 10px 35px rgba(255, 165, 2, 0.4),
+                inset 0 -5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .quiz-island:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 50px rgba(255, 165, 2, 0.5);
+        }
+
+        /* ============================================== */
+        /*    LESSON CARD - DUOLINGO CARTOON STYLE        */
+        /* ============================================== */
+
+        .lesson-card {
+            width: 94%;
+            max-width: 700px;
+            background: linear-gradient(135deg,
+                    rgba(20, 10, 40, 0.95) 0%,
+                    rgba(40, 20, 80, 0.9) 50%,
+                    rgba(20, 10, 40, 0.95) 100%);
+            border-radius: 35px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow:
+                0 25px 80px rgba(100, 50, 200, 0.4),
+                0 0 100px rgba(150, 100, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 35px 40px 40px;
+            gap: 18px;
+            animation: premiumCardIn 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 20px 0 #0d5f8a,
+                0 25px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        @keyframes cardBounceIn {
+            0% {
+                transform: scale(0.3) translateY(100px);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05) translateY(-10px);
+            }
+
+            70% {
+                transform: scale(0.95) translateY(5px);
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* EMOJI - PREMIUM FLOAT */
+        .emoji-lesson {
+            font-size: 9rem;
+            margin: 5px 0 10px;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+            animation: floatEmoji 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .emoji-lesson:hover {
+            transform: scale(1.2) rotate(-10deg);
+        }
+
+        @keyframes floatEmoji {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes premiumCardIn {
+            0% {
+                transform: translateY(50px) scale(0.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* WORD TITLE - PREMIUM GRADIENT */
+        .word-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+            background: linear-gradient(135deg, #fff 0%, #a8edea 50%, #fed6e3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 4px 15px rgba(150, 200, 255, 0.5));
+            letter-spacing: -3px;
+        }
+
+        /* TURKISH WORD - PINK GRADIENT */
+        .word-tr {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 3px 10px rgba(240, 100, 150, 0.4));
+        }
+
+        /* SENTENCE BOXES - DUOLINGO CARD STYLE */
+        .sentence-box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .sent-btn {
+            width: 100%;
+            padding: 18px 25px;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.12) 0%,
+                    rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .sent-btn:hover {
+            transform: translateY(-4px) scale(1.02);
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.18) 0%,
+                    rgba(255, 255, 255, 0.08) 100%);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .sent-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .sentence-en,
+        .sentence-tr {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        /* Hover'da neon pembe glow - Ayna gibi */
+        .sent-btn:hover .sentence-en,
+        .sent-btn:hover .sentence-tr {
+            color: #ff6bcc;
+            text-shadow:
+                0 0 10px #ff6bcc,
+                0 0 20px #ff6bcc,
+                0 0 40px rgba(255, 107, 204, 0.6),
+                0 0 60px rgba(255, 107, 204, 0.4);
+        }
+
+        /* CONTROLS - DUOLINGO BUTTONS */
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .play-btn {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: none;
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .play-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .play-btn:active {
+            transform: translateY(0) scale(0.95);
+        }
+
+        .btn-en {
+            background: linear-gradient(180deg, #4ade80 0%, #22c55e 100%);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-tr {
+            background: linear-gradient(180deg, #f472b6 0%, #ec4899 100%);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+        }
+
+        /* MIC BUTTON - PREMIUM */
+        .mic-btn {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mic-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+            border-radius: 50% 50% 0 0;
+        }
+
+        .mic-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .mic-btn:active {
+            transform: translateY(0) scale(0.95);
+        }
+
+        .mic-btn.listening {
+            animation: micPulse 0.6s ease-in-out infinite;
+            background: linear-gradient(180deg, #f87171 0%, #ef4444 100%);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.5);
+        }
+
+        @keyframes micPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 40px rgba(239, 68, 68, 0.6);
+            }
+        }
+
+        @keyframes cardGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 80px rgba(150, 50, 255, 0.4), 0 0 150px rgba(50, 150, 255, 0.2), 0 40px 100px rgba(0, 0, 0, 0.6);
+            }
+
+            50% {
+                box-shadow: 0 0 100px rgba(150, 50, 255, 0.6), 0 0 180px rgba(50, 150, 255, 0.3), 0 40px 100px rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        .word-title {
+            font-size: 5rem;
+            font-weight: 900;
+            color: white;
+            margin: 0;
+            line-height: 1.1;
+            text-shadow:
+                0 0 30px #00ffff,
+                0 0 60px #00ffff,
+                0 0 100px rgba(0, 255, 255, 0.5);
+            animation: neonPulse 2s infinite ease-in-out;
+        }
+
+        .word-tr {
+            font-size: 3.5rem;
+            color: #ffcc00;
+            font-weight: 700;
+            margin: 0;
+            text-shadow:
+                0 0 25px #ffa500,
+                0 0 50px #ff8c00,
+                0 0 80px rgba(255, 165, 0, 0.6);
+            animation: neonPulse 2.5s infinite ease-in-out 0.3s;
+        }
+
+        .emoji-lesson {
+            font-size: 14rem;
+            margin: 25px 0;
+            filter: drop-shadow(0 0 50px rgba(255, 200, 100, 0.7)) drop-shadow(0 0 80px rgba(255, 150, 50, 0.4));
+            animation: megaBounce 4s ease-in-out infinite;
+            transition: all 0.4s ease;
+        }
+
+        .emoji-lesson:hover {
+            transform: scale(1.1) rotate(10deg);
+            filter: drop-shadow(0 0 80px rgba(255, 200, 100, 1)) drop-shadow(0 0 120px rgba(255, 150, 50, 0.7));
+        }
+
+        /* SENTENCE BOXES - GLASSMORPHISM DARK */
+        .sentence-box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sent-btn {
+            width: 100%;
+            padding: 20px 30px;
+            background: linear-gradient(145deg,
+                    rgba(40, 50, 80, 0.7) 0%,
+                    rgba(25, 35, 60, 0.85) 100%);
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: 2px solid rgba(100, 150, 255, 0.3);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .sent-btn:hover {
+            transform: translateY(-5px);
+            border-color: rgba(100, 200, 255, 0.6);
+            box-shadow:
+                0 0 30px rgba(100, 150, 255, 0.3),
+                0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .sentence-en,
+        .sentence-tr {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* NAVIGATION ARROWS */
+        .nav-arrows {
+            position: fixed;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            pointer-events: none;
+            z-index: 500;
+        }
+
+        /* ARROW BUTTONS - OWL STYLE */
+        .arrow-btn {
+            pointer-events: auto;
+            width: 70px;
+            height: 70px;
+            background: transparent;
+            border-radius: 50%;
+            border: none;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            filter: drop-shadow(0 0 15px rgba(0, 200, 255, 0.5));
+            transition: all 0.3s ease;
+        }
+
+        .arrow-btn:hover {
+            transform: scale(1.4);
+            filter: drop-shadow(0 0 40px rgba(0, 255, 255, 1)) drop-shadow(0 0 80px rgba(0, 200, 255, 0.8));
+        }
+
+        .arrow-btn:active {
+            transform: scale(1.1);
+        }
+
+        /* MASCOT - BIGGER & ANIMATED */
+        .mascot-ship {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 1000;
+        }
+
+        .mascot-face {
+            font-size: 5rem;
+            cursor: pointer;
+            animation: megaBounce 5s infinite ease-in-out;
+            filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.4));
+            transition: transform 0.3s ease;
+        }
+
+        .mascot-face:hover {
+            transform: scale(1.3);
+            filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.6));
+        }
+
+        /* MASCOT CELEBRATION ANIMATIONS */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            25% {
+                transform: translateY(-30px) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            75% {
+                transform: translateY(-25px) rotate(5deg);
+            }
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0) rotate(0);
+            }
+
+            20% {
+                transform: translateX(-10px) rotate(-10deg);
+            }
+
+            40% {
+                transform: translateX(10px) rotate(10deg);
+            }
+
+            60% {
+                transform: translateX(-10px) rotate(-5deg);
+            }
+
+            80% {
+                transform: translateX(10px) rotate(5deg);
+            }
+        }
+
+        @keyframes cheer {
+            0% {
+                transform: scale(1) rotate(0);
+            }
+
+            25% {
+                transform: scale(1.3) rotate(-10deg);
+            }
+
+            50% {
+                transform: scale(1.5) rotate(10deg);
+            }
+
+            75% {
+                transform: scale(1.3) rotate(-5deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0);
+            }
+        }
+
+        @keyframes sad {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            25% {
+                transform: translateY(5px) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(10px) scale(0.95);
+            }
+
+            75% {
+                transform: translateY(5px) rotate(3deg);
+            }
+        }
+
+        @keyframes dance {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0) scale(1);
+            }
+
+            20% {
+                transform: translateY(-15px) rotate(-15deg) scale(1.1);
+            }
+
+            40% {
+                transform: translateY(0) rotate(15deg) scale(1);
+            }
+
+            60% {
+                transform: translateY(-10px) rotate(-10deg) scale(1.1);
+            }
+
+            80% {
+                transform: translateY(0) rotate(10deg) scale(1);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(180deg) scale(1.2);
+            }
+
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        .mascot-face.bounce {
+            animation: bounce 0.6s ease-in-out;
+        }
+
+        .mascot-face.shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .mascot-face.cheer {
+            animation: cheer 0.8s ease-in-out;
+        }
+
+        .mascot-face.sad {
+            animation: sad 0.6s ease-in-out;
+        }
+
+        .mascot-face.dance {
+            animation: dance 1s ease-in-out;
+        }
+
+        .mascot-face.spin {
+            animation: spin 0.8s ease-in-out;
+        }
+
+        /* CORRECT/WRONG ANSWER EFFECTS */
+        @keyframes correctPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+
+            50% {
+                box-shadow: 0 0 0 30px rgba(16, 185, 129, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+
+        @keyframes wrongShake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(-15px);
+            }
+
+            40% {
+                transform: translateX(15px);
+            }
+
+            60% {
+                transform: translateX(-10px);
+            }
+
+            80% {
+                transform: translateX(10px);
+            }
+        }
+
+        .correct-answer {
+            animation: correctPulse 0.6s ease-out;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+            border-color: #059669 !important;
+        }
+
+        .wrong-answer {
+            animation: wrongShake 0.5s ease-out;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+            border-color: #dc2626 !important;
+        }
+
+        /* STAR EXPLOSION EFFECT */
+        @keyframes starExplode {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5) rotate(180deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .star-explosion {
+            position: fixed;
+            font-size: 5rem;
+            pointer-events: none;
+            z-index: 9999;
+            animation: starExplode 0.8s ease-out forwards;
+        }
+
+        /* STAR BOX */
+        .star-box {
+            background: linear-gradient(145deg, #ffffff 0%, #fff8e0 100%);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            border: 4px solid var(--accent);
+            box-shadow:
+                0 8px 25px rgba(255, 230, 109, 0.4),
+                inset 0 -3px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        /* LEARNED BUTTON */
+        .learned-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(145deg, #f1f5f9 0%, #e2e8f0 100%);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 3px solid transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .learned-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .learned-btn.active {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border-color: #059669;
+        }
+
+        /* CONTROLS */
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .play-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: none;
+            font-size: 2.2rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.2s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn-en {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .btn-tr {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+        }
+
+        /* SENTENCE BUTTONS */
+        .sentence-box {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .sent-btn {
+            background: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 18px;
+            border-radius: 25px;
+            text-align: center;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .sent-btn:hover {
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.2);
+        }
+
+        .sentence-en {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #334155;
+        }
+
+        .sentence-tr {
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+
+        /* QUIZ ITEMS */
+        .quiz-item {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(145deg, #ffffff 0%, #f0f4ff 100%);
+            border-radius: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            cursor: pointer;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 4px solid transparent;
+        }
+
+        .quiz-item:hover {
+            transform: translateY(-10px) scale(1.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent);
+        }
+
+        .quiz-item:active {
+            transform: scale(0.95);
+        }
+
+        .quiz-item span {
+            font-size: 1rem;
+            margin-top: 8px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* LISTEN CUE */
+        #listen-cue {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 10rem;
+            pointer-events: none;
+            z-index: 9000;
+            opacity: 0;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+        }
+
+        #listen-cue.active {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        /* STORY CONTENT - GOLDEN COSMIC */
+        .story-content {
+            background: linear-gradient(145deg,
+                    rgba(40, 30, 10, 0.95) 0%,
+                    rgba(25, 20, 5, 0.98) 100%);
+            border-radius: 50px;
+            padding: 50px;
+            width: 90%;
+            max-width: 650px;
+            text-align: center;
+            border: 5px solid #ffd700;
+            box-shadow:
+                0 0 50px rgba(255, 215, 0, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.5),
+                inset 0 0 30px rgba(255, 215, 0, 0.1);
+            animation: popIn 0.5s ease-out;
+        }
+
+        .story-text {
+            font-size: 1.8rem;
+            line-height: 1.7;
+            margin: 25px 0;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* BUBBLE */
+        .bubble {
+            background: white;
+            border: 5px solid var(--secondary);
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #334155;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            display: none;
+            max-width: 280px;
+        }
+
+        .map-path {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        /* Day island styles are defined earlier - this duplicate removed */
+
+        /* ====================== */
+        /* NAV ARROWS */
+        /* ====================== */
+        .nav-arrows {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            pointer-events: none;
+            z-index: 200;
+        }
+
+        .arrow-btn {
+            pointer-events: auto;
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            border: none;
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .arrow-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .arrow-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ====================== */
+        /* MASCOT */
+        /* ====================== */
+        .mascot-ship {
+            position: fixed;
+            bottom: 120px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .mascot-face {
+            font-size: 5rem;
+            cursor: pointer;
+            animation: breathe 3s infinite ease-in-out;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+        }
+
+        /* CONTROLS - BIGGER */
+        .controls {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        /* PLAY BUTTONS - BIG NEON */
+        .play-btn {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: none;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.15);
+        }
+
+        .btn-en {
+            background: linear-gradient(135deg, #00aaff 0%, #0066ff 100%);
+            color: white;
+            box-shadow: 0 0 30px rgba(0, 150, 255, 0.5);
+        }
+
+        .btn-tr {
+            background: linear-gradient(135deg, #ff0066 0%, #ff00aa 100%);
+            color: white;
+            box-shadow: 0 0 30px rgba(255, 0, 150, 0.5);
+        }
+
+        /* MIC BUTTON - SAME AS GB/TR */
+        .mic-btn {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffaa00 0%, #ff6600 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(255, 150, 0, 0.5);
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .mic-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 0 50px rgba(255, 150, 0, 0.7);
+        }
+
+        .mic-btn.listening {
+            animation: glowPulse 0.5s infinite;
+            background: linear-gradient(135deg, #ff0000 0%, #ff4400 100%);
+        }
+
+        /* LEARNED BUTTON - ALWAYS VISIBLE */
+        .learned-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, rgba(100, 100, 150, 0.8) 0%, rgba(60, 60, 100, 0.9) 100%);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .learned-btn:hover {
+            border-color: #00ff88;
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.4);
+        }
+
+        /* LEARNED BUTTON - VISIBLE */
+        .learned-btn.done {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc66 100%);
+            color: white;
+            border-color: #00ff88;
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
+        }
+
+        /* QUIZ ITEMS - CARTOON STYLE */
+        .quiz-item {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(145deg,
+                    rgba(50, 60, 100, 0.9) 0%,
+                    rgba(30, 40, 70, 0.95) 100%);
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.4),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+        }
+
+        .quiz-item:hover {
+            transform: translateY(-15px) scale(1.12);
+            border-color: #ffdd00;
+            box-shadow:
+                0 0 50px rgba(255, 221, 0, 0.4),
+                0 25px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .quiz-item span:first-child {
+            font-size: 5rem;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+            animation: megaBounce 4s infinite ease-in-out;
+        }
+
+        .quiz-item span:last-child {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            color: white;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* STAR BOX */
+        .star-box {
+            background: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            border: 4px solid var(--primary);
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* HUGE BTN (Week buttons) */
+        .week-btn {
+            width: 100px;
+            height: 120px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 3px solid #e0e0e0;
+            transition: transform 0.2s;
+            font-size: 3rem;
+        }
+
+        .week-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .week-btn .week-num {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body onclick="initVoiceSystem()">
+
+    <div id="listen-cue">👂</div>
+    <canvas id="confetti"></canvas>
+
+    <!-- STORY MODE OVERLAY -->
+    <div id="screen-story" class="screen hidden">
+        <div class="story-content">
+            <div style="font-size:5rem; margin-bottom:20px;">📖</div>
+            <h2 style="font-size:2.5rem; margin:0; color:var(--primary)">Günün Hikayesi</h2>
+            <p id="story-text" class="story-text">...</p>
+            <button class="huge-btn" style="width:100%; border-radius:20px; font-size:1.5rem;"
+                onclick="closeStory()">Harika! 🌟</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="huge-btn" onclick="goHome()">🌍</div>
+        <div class="star-box">
+            <span class="living-emoji">⭐</span>
+            <span id="star-val">0</span>
+        </div>
+        <div class="huge-btn" onclick="showStickers()">🎁</div>
+    </header>
+
+    <div class="game-area">
+        <!-- HAFTALAR EKRANI (Ana Menü) -->
+        <div id="screen-weeks" class="screen">
+            <div style="text-align:center; margin-bottom:50px; animation: floatCard 4s infinite ease-in-out">
+                <h1 style="font-size:3rem; color:#fff; text-shadow:0 4px 10px rgba(0,0,0,0.2); margin:0">Dünya Seç
+                    Bade! 🗺️</h1>
+            </div>
+            <div id="grid-weeks">
+                <!-- JS ile doldurulacak -->
+            </div>
+        </div>
+
+        <!-- MACERA HARİTASI (GÜNLER) -->
+        <div id="screen-map" class="screen hidden">
+            <h1 id="map-title" style="color:white; font-size:2.5rem; margin-bottom:20px;">Macera Başlıyor!</h1>
+            <div class="map-container">
+                <div id="map-path" class="map-path"></div>
+            </div>
+        </div>
+
+        <!-- KELİME VE CÜMLE DERSI -->
+        <div id="screen-card" class="screen hidden">
+            <div class="lesson-card">
+                <div class="learned-btn" id="learned-chip" onclick="markLearned()">
+                    <span>Öğrendim</span> <span id="learned-check">⭕</span>
+                </div>
+                <div class="emoji-lesson" id="lesson-emo">🪞</div>
+                <div class="text-group">
+                    <h2 id="lesson-en" class="word-title"></h2>
+                    <h3 id="lesson-tr" class="word-tr"></h3>
+                </div>
+                <!-- CÜMLE KUTUSU (İKİYE BÖLÜNDÜ) -->
+                <div class="sentence-box">
+                    <div id="btn-sent-en" class="sent-btn">
+                        <span id="sent-en" class="sentence-en"></span>
+                        <span style="font-size:0.8rem; margin-top:5px; color:var(--secondary)">Tap to Hear
+                            🇬🇧</span>
+                    </div>
+                    <div id="btn-sent-tr" class="sent-btn">
+                        <span id="sent-tr" class="sentence-tr"></span>
+                        <span style="font-size:0.8rem; margin-top:5px; color:var(--secondary)">Tap to Learn
+                            🇹🇷</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="play-btn btn-en" onclick="triggerTalk('en')">🇬🇧</button>
+                    <button class="play-btn btn-tr" onclick="triggerTalk('tr')">🇹🇷</button>
+                </div>
+            </div>
+            <div class="nav-arrows">
+                <div class="arrow-btn" onclick="moveNav(-1)">💜</div>
+                <div class="arrow-btn" onclick="moveNav(1)">💛</div>
+            </div>
+            <div id="card-index"
+                style="position:absolute; top:30px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg, rgba(0,200,255,0.3) 0%, rgba(150,0,255,0.3) 100%); padding:12px 30px; border-radius:30px; font-weight:900; font-size:1.3rem; color:white; text-shadow:0 2px 10px rgba(0,0,0,0.3); pointer-events:none; backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,0.2);">
+                1 / 5</div>
+        </div>
+
+        <!-- SESLİ QUIZ -->
+        <div id="screen-quiz" class="screen hidden">
+            <h1 style="color:white; font-size: 3rem; margin-bottom: 0.5rem;">Soru 1 / 10</h1>
+            <div id="quiz-question-text"
+                style="font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1.5rem; text-shadow: 3px 3px 0 rgba(0,0,0,0.2); background: rgba(255,255,255,0.2); padding: 10px 30px; border-radius: 50px; display: inline-block;">
+                🤔 Nerede bu?</div>
+            <div class="huge-btn pulse" onclick="sayAgain()" style="width: 120px; height: 120px; margin: 0 auto 2rem;">
+                🔊</div>
+            <div id="quiz-grid" style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;"></div>
+        </div>
+
+        <!-- STICKER BOOK -->
+        <div id="screen-stickers" class="screen hidden">
+            <h1 style="color:white; font-size:3rem; margin-bottom:30px;">Hediyelerim! 🦄</h1>
+            <div id="grid-stickers" class="quiz-grid" style="grid-template-columns: repeat(4, 1fr);"></div>
+        </div>
+    </div>
+
+    <div class="mascot-ship">
+        <!-- Maskot baloncuğu tamamen kaldırıldı, sadece görsel eşlik için orada -->
+        <div class="mascot-face" id="m-emo" onclick="mascotSing()">🦉</div>
+    </div>
+
+    <script>
+        // MASKOT SÜPER ZEKA MERKEZİ - (Gemini 1.5 Flash Seviyesi Dağarcık)
+        const mascotPhrases = {
+            welcome: [
+                "Badeciğim! İngilizce dünyasına hoş geldin, seni gördüğüme çok sevindim!",
+                "Merhaba Bade! Bugün seninle keşfedeceğimiz muhteşem şeyler var!",
+                "Bade! Güzel bir güne yeni kelimelerle başlayalım mı? Ben çok hazırım!",
+                "Selam Bade! Bugün senin zekana hayran kalacağım bir gün olacak, eminim!",
+                "Hoş geldin şampiyon Bade! Hadi haritanın en gizemli yerlerine gidelim!"
+            ],
+            discovery: [
+                "Bade! Şuna bak, bu kelime tam senin gibi parlıyor!",
+                "Vay canına Bade! Bu nesneyi daha önce fark etmiş miydin? Çok ilginç!",
+                "Bade, yeni keşfimiz burada! Bakalım bize neler anlatacak?",
+                "Muhteşem bir şey buldum! Bade, dikaktlice bak, işte burada!",
+                "Badeciğim, bu kelime seninle tanışacağı için çok heyecanlı!"
+            ],
+            praise: [
+                "Bade! Sen gerçekten bir dâhisin, her şeyi şak diye çözüyorsun!",
+                "Muhteşemsin Bade! İngilizce melekleri seninle gurur duyuyor!",
+                "Aferin benim akıllı prensesime! Her geçen gün daha da güçleniyorsun!",
+                "İnanılmazsın! Seninle yarışmak imkansız Bade, çok hızlısın!",
+                "İşte benim şampiyonum! Bade, sen bir kelime avcısısın!"
+            ],
+            quizCorrect: [
+                "Bravo Bade! Doğru bildin, şampiyon!",
+                "Harika! Doğru cevap Badeciğim, yaşasın!",
+                "İşte bu! Bildin Bade, çok akıllısın!",
+                "Süpersin! Doğru olanı hemen seçtin Bade!",
+                "Evet evet evet! Bade yine yanılmadı, harikasın!"
+            ],
+            quizWrong: [
+                "Hımm, kafan karıştı herhalde Badeciğim, hadi bir daha dikkatle bak!",
+                "Aman, bu değil galiba! Bir daha denemeye ne dersin benim akıllı kızım?",
+                "Kafan mı karıştı senin? Olsun, bir daha bakarsan kesin bulursun!",
+                "Badeciğim, sanırım bir karışıklık oldu, hadi tekrar dene!",
+                "Tüh! Hadi bir daha dene bakalım Bade, doğrusuna çok yakınsın!"
+            ],
+            explainStart: [
+                "Peki bu kelimeyle nasıl havalı bir cümle kurarız? Dinle bakalım:",
+                "Badeciğim, gel bu kelimeyi bir hikayeye dönüştürelim, dinle:",
+                "Şimdi de bu kelimeyi bir kahraman gibi kullanalım, bak şöyle:",
+                "Bu kelimeyle çok güzel bir cümle öğreneceğiz, hazır mısın?"
+            ],
+            explainEnd: [
+                "Badeciğim, bu cümle aslında kalbinden geçen şu duyguyu anlatıyor:",
+                "Biliyorsun değil mi? Türkçesi tam olarak şu anlama geliyor:",
+                "Ne kadar şiirsel bir anlamı var değil mi? Bak şunu söylüyor:",
+                "Bade, bu cümleyi öğrendiğinde herkese ne kadar zeki olduğunu gösterebilirsin!"
+            ]
+        };
+
+        const getPhrase = (p) => mascotPhrases[p][Math.floor(Math.random() * mascotPhrases[p].length)];
+
+        // SES MOTORU v3 - TAM SENKRON
+        class SpeechQueue {
+            constructor() {
+                this.queue = [];
+                this.isPlaying = false;
+                this.voices = [];
+                this.currentUtterance = null;
+            }
+
+            init() {
+                const load = () => { this.voices = window.speechSynthesis.getVoices(); };
+                load();
+                if (speechSynthesis.onvoiceschanged !== undefined) speechSynthesis.onvoiceschanged = load;
+            }
+
+            push(txt, lang, rate = 0.8, force = false) {
+                if (!txt) return;
+                this.queue.push({ txt, lang, rate, force, type: 'speech' });
+                if (!this.isPlaying) this.next();
+            }
+
+            pushAction(callback) {
+                this.queue.push({ type: 'action', callback });
+                if (!this.isPlaying) this.next();
+            }
+
+            speak(txt, lang, rate = 0.8, force = false) {
+                this.clear();
+                this.push(txt, lang, rate, force);
+            }
+
+            stop() { this.clear(); }
+
+            next() {
+                if (this.queue.length === 0) {
+                    this.isPlaying = false;
+                    this.currentUtterance = null;
+                    return;
+                }
+
+                // SES LİSTESİ HENÜZ YÜKLENMEMİŞSE BEKLE (Sadece konuşma için)
+                let vList = window.speechSynthesis.getVoices();
+                if (vList.length === 0 && this.queue[0].type === 'speech') {
+                    setTimeout(() => this.next(), 200);
+                    return;
+                }
+
+                this.isPlaying = true;
+                const item = this.queue.shift();
+
+                if (item.type === 'action') {
+                    if (item.callback) item.callback();
+                    setTimeout(() => this.next(), 3000); // Action süresi (Listen pause) 3sn sabit
+                    return;
+                }
+
+                // HYBRID AUDIO CHECK (Simulated)
+                // Gerçek dosya kontrolü şu an yok, doğrudan TTS fallback çalışacak.
+                // İleride buraya `new Audio('/assets/' + item.txt + '.mp3').play()` eklenebilir.
+
+                window.speechSynthesis.cancel();
+                const msg = new SpeechSynthesisUtterance(item.txt);
+                this.currentUtterance = msg;
+                msg.lang = (item.lang === 'tr' ? 'tr-TR' : 'en-US');
+                msg.rate = item.rate;
+                msg.pitch = 1.1;
+
+                let v = null;
+                if (item.lang === 'tr') {
+                    v = vList.find(v => v.lang.startsWith('tr') && (v.name.includes('Google') || v.name.includes('Yelda') || v.name.includes('Tolga') || v.name.includes('Turkish')));
+                    if (!v) v = vList.find(v => v.lang.startsWith('tr'));
+                } else {
+                    v = vList.find(v => v.lang.startsWith('en') && (v.name.includes('Google') || v.name.includes('Premium') || v.name.includes('Samantha')));
+                    if (!v) v = vList.find(v => v.lang.startsWith('en'));
+                }
+                if (v) msg.voice = v;
+
+                msg.onstart = () => { };
+                msg.onend = () => {
+                    this.currentUtterance = null;
+                    setTimeout(() => this.next(), 300);
+                };
+
+                msg.onerror = () => { this.isPlaying = false; this.next(); };
+                window.speechSynthesis.speak(msg);
+            }
+
+            clear() {
+                window.speechSynthesis.cancel();
+                this.queue = [];
+                this.isPlaying = false;
+                this.currentUtterance = null;
+            }
+        }
+
+        const SQ = new SpeechQueue();
+        const icons = ["🦉", "🤖", "🐬", "🍭", "🦖", "❄️", "🏜️", "🧙", "🌋", "🦾", "☁️", "🏙️"];
+        const names = ["Orman", "Uzay", "Deniz", "Şeker", "Dino", "Kış", "Çöl", "Sihir", "Lav", "Metal", "Bulut", "Şehir"];
+
+        const db = {
+            1: [ // Ev Eşyaları
+                { w: "Mirror", t: "Ayna", e: "🪞", sEn: "Look at the mirror", sTr: "Aynaya bak" },
+                { w: "Lamp", t: "Lamba", e: "💡", sEn: "Turn on the lamp", sTr: "Lambayı aç" },
+                { w: "Carpet", t: "Halı", e: "🧶", sEn: "The carpet is soft", sTr: "Halı çok yumuşak" },
+                { w: "Clock", t: "Saat", e: "⏰", sEn: "What time is it", sTr: "Saat kaç" },
+                { w: "Sofa", t: "Koltuk", e: "🛋️", sEn: "Sit on the sofa", sTr: "Koltukta otur" }
+            ],
+            2: [ // Meyveler ve Yiyecekler
+                { w: "Apple", t: "Elma", e: "🍎", sEn: "I eat an apple", sTr: "Ben bir elma yerim" },
+                { w: "Banana", t: "Muz", e: "🍌", sEn: "The banana is yellow", sTr: "Muz sarı renktedir" },
+                { w: "Orange", t: "Portakal", e: "🍊", sEn: "I love orange juice", sTr: "Portakal suyunu severim" },
+                { w: "Milk", t: "Süt", e: "🥛", sEn: "Drink your milk", sTr: "Sütünü iç" },
+                { w: "Bread", t: "Ekmek", e: "🍞", sEn: "Give me some bread", sTr: "Bana biraz ekmek ver" }
+            ],
+            3: [ // Hayvanlar
+                { w: "Cat", t: "Kedi", e: "🐱", sEn: "The cat is sleeping", sTr: "Kedi uyuyor" },
+                { w: "Dog", t: "Köpek", e: "🐶", sEn: "I like dogs", sTr: "Köpekleri severim" },
+                { w: "Bird", t: "Kuş", e: "🐦", sEn: "The bird flies high", sTr: "Kuş yüksekten uçar" },
+                { w: "Fish", t: "Balık", e: "🐟", sEn: "The fish swims fast", sTr: "Balık hızlı yüzer" },
+                { w: "Lion", t: "Aslan", e: "🦁", sEn: "The lion is strong", sTr: "Aslan çok güçlüdür" }
+            ],
+            4: [ // Renkler ve Şekiller
+                { w: "Red", t: "Kırmızı", e: "🔴", sEn: "I like red", sTr: "Kırmızı rengi severim" },
+                { w: "Blue", t: "Mavi", e: "🔵", sEn: "The sky is blue", sTr: "Gökyüzü mavidir" },
+                { w: "Green", t: "Yeşil", e: "🟢", sEn: "The grass is green", sTr: "Çimenler yeşildir" },
+                { w: "Yellow", t: "Sarı", e: "🟡", sEn: "The sun is yellow", sTr: "Güneş sarıdır" },
+                { w: "Heart", t: "Kalp", e: "❤️", sEn: "This is a heart", sTr: "Bu bir kalptir" }
+            ],
+            5: [ // Oyuncaklar
+                { w: "Ball", t: "Top", e: "⚽", sEn: "Throw the ball", sTr: "Topu at" },
+                { w: "Doll", t: "Oyuncak Bebek", e: "🪆", sEn: "Play with the doll", sTr: "Bebekle oyna" },
+                { w: "Car", t: "Oyuncak Araba", e: "🚗", sEn: "Drive the car", sTr: "Arabayı sür" },
+                { w: "Train", t: "Tren", e: "🚂", sEn: "The train is long", sTr: "Tren çok uzundur" },
+                { w: "Robot", t: "Robot", e: "🤖", sEn: "Look at the robot", sTr: "Robota bak" }
+            ],
+            6: [ // Okul Eşyaları
+                { w: "Book", t: "Kitap", e: "📚", sEn: "Read a book", sTr: "Kitap oku" },
+                { w: "Pencil", t: "Kalem", e: "✏️", sEn: "Write with a pencil", sTr: "Kalemle yaz" },
+                { w: "Paper", t: "Kağıt", e: "📄", sEn: "A white paper", sTr: "Beyaz bir kağıt" },
+                { w: "Eraser", t: "Silgi", e: "🧼", sEn: "Use the eraser", sTr: "Silgiyi kullan" },
+                { w: "Bag", t: "Çanta", e: "🎒", sEn: "The bag is big", sTr: "Çanta çok büyüktür" }
+            ],
+            7: [ // Vücudumuz
+                { w: "Eye", t: "Göz", e: "👁️", sEn: "Touch your eye", sTr: "Gözüne dokun" },
+                { w: "Hand", t: "El", e: "✋", sEn: "Shake my hand", sTr: "Elimi tut" },
+                { w: "Nose", t: "Burun", e: "👃", sEn: "Touch your nose", sTr: "Burnuna dokun" },
+                { w: "Head", t: "Kafa", e: "👤", sEn: "Nod your head", sTr: "Kafanı salla" },
+                { w: "Ear", t: "Kulak", e: "👂", sEn: "I hear with my ear", sTr: "Kulağımla duyuyorum" }
+            ],
+            8: [ // Kıyafetler
+                { w: "Hat", t: "Şapka", e: "👒", sEn: "Put on your hat", sTr: "Şapkanı tak" },
+                { w: "Shoes", t: "Ayakkabı", e: "👟", sEn: "Tie your shoes", sTr: "Ayakkabılarını bağla" },
+                { w: "Shirt", t: "Gömlek", e: "👕", sEn: "A blue shirt", sTr: "Mavi bir gömlek" },
+                { w: "Dress", t: "Elbise", e: "👗", sEn: "Look at the dress", sTr: "Elbiseye bak" },
+                { w: "Socks", t: "Çorap", e: "🧦", sEn: "Wear your socks", sTr: "Çoraplarını giy" }
+            ],
+            9: [ // Taşıtlar
+                { w: "Bus", t: "Otobüs", e: "🚌", sEn: "The bus is yellow", sTr: "Sarı bir otobüs" },
+                { w: "Plane", t: "Uçak", e: "✈️", sEn: "The plane flies", sTr: "Uçak uçar" },
+                { w: "Bike", t: "Bisiklet", e: "🚲", sEn: "Ride the bike", sTr: "Bisiklete bin" },
+                { w: "Ship", t: "Gemi", e: "🚢", sEn: "The ship swims", sTr: "Gemi denizde yüzer" },
+                { w: "Helicopter", t: "Helikopter", e: "🚁", sEn: "Look at the helicopter", sTr: "Helikoptere bak" }
+            ],
+            10: [ // Doğa
+                { w: "Sun", t: "Güneş", e: "☀️", sEn: "The sun shines", sTr: "Güneş parlıyor" },
+                { w: "Moon", t: "Ay", e: "🌙", sEn: "The moon is bright", sTr: "Ay çok parlaktır" },
+                { w: "Star", t: "Yıldız", e: "⭐", sEn: "Count the stars", sTr: "Yıldızları say" },
+                { w: "Cloud", t: "Bulut", e: "☁️", sEn: "A white cloud", sTr: "Beyaz bir bulut" },
+                { w: "Rain", t: "Yağmur", e: "🌧️", sEn: "I love the rain", sTr: "Yağmuru seviyorum" }
+            ],
+            11: [ // Sebzeler
+                { w: "Carrot", t: "Havuç", e: "🥕", sEn: "Eat your carrot", sTr: "Havucunu ye" },
+                { w: "Potato", t: "Patates", e: "🥔", sEn: "I like potatoes", sTr: "Patatesi severim" },
+                { w: "Tomato", t: "Domates", e: "🍅", sEn: "Red tomato", sTr: "Kırmızı domates" },
+                { w: "Corn", t: "Mısır", e: "🌽", sEn: "The corn is sweet", sTr: "Mısır tatlıdır" },
+                { w: "Broccoli", t: "Brokoli", e: "🥦", sEn: "Healthy broccoli", sTr: "Sağlıklı brokoli" }
+            ],
+            12: [ // Uzay
+                { w: "Earth", t: "Dünya", e: "🌍", sEn: "Our earth", sTr: "Bizim dünyamız" },
+                { w: "Mars", t: "Mars", e: "🔴", sEn: "The red planet", sTr: "Kırmızı gezegen" },
+                { w: "Rocket", t: "Roket", e: "🚀", sEn: "The rocket goes fast", sTr: "Roket hızlı gider" },
+                { w: "Alien", t: "Uaylı", e: "👽", sEn: "Hello alien", sTr: "Merhaba uzaylı" },
+                { w: "Galaxy", t: "Galaksi", e: "🌌", sEn: "Infinite galaxy", sTr: "Sonsuz galaksi" }
+            ]
+        };
+
+        let st;
+        try {
+            st = {
+                stars: parseInt(localStorage.getItem('b_s')) || 0,
+                unlocked: JSON.parse(localStorage.getItem('b_u')) || [1],
+                sticks: JSON.parse(localStorage.getItem('b_st')) || [],
+                learned: JSON.parse(localStorage.getItem('b_l')) || {},
+                curW: 1, curD: 1, curI: 0
+            };
+            if (!Array.isArray(st.unlocked)) st.unlocked = [1];
+        } catch (e) {
+            console.error("Storage Error:", e);
+            st = { stars: 0, unlocked: [1], sticks: [], learned: {}, curW: 1, curD: 1, curI: 0 };
+        }
+
+        let voiceInitialized = false;
+        function initVoiceSystem() {
+            if (voiceInitialized) return; // Sadece bir kez çalış!
+            voiceInitialized = true;
+
+            SQ.init();
+            // Ses motorunu ısıt
+            const u = new SpeechSynthesisUtterance('');
+            speechSynthesis.speak(u);
+            // İlk açılışta ekranı göster - artık window.onload'da yapılıyor
+        }
+
+        // goHome is defined at the end of the file
+
+        function renderWeeks() {
+            try {
+                showScreen('screen-weeks');
+                const g = document.getElementById('grid-weeks');
+                if (!g) { alert('Error: Grid not found'); return; }
+
+                g.innerHTML = '';
+
+                if (!icons || icons.length === 0) { alert('Error: Icons missing'); return; }
+
+                icons.forEach((icon, i) => {
+                    const n = i + 1;
+                    const lock = !st.unlocked.includes(n);
+                    const box = document.createElement('div');
+                    box.className = `week-card ${lock ? 'locked' : ''}`;
+                    box.style.animationDelay = `${i * 0.08}s`;
+
+                    // İLERLEME HESAPLAMA
+                    const pool = db[n] || [];
+                    const targetTotal = 35;
+                    const learnedCount = pool.filter(x => st.learned && st.learned[x.w]).length;
+                    const percentage = Math.round((learnedCount / targetTotal) * 100);
+
+                    let progressHTML = '';
+                    if (!lock && learnedCount > 0) {
+                        progressHTML = `<div class="progress-badge">${percentage}%</div>`;
+                    }
+
+                    box.innerHTML = `
+                        ${progressHTML}
+                        <span class="emoji">${icon}</span>
+                        <span class="week-num">Hafta ${n}</span>
+                    `;
+
+                    if (!lock) {
+                        box.onclick = () => {
+                            triggerMascotAnimation('bounce');
+                            openMap(n);
+                        };
+                    }
+                    g.appendChild(box);
+                });
+
+                // Karşılama animasyonu
+                triggerMascotAnimation('dance');
+            } catch (e) {
+                alert('Render Error: ' + e.message);
+                console.error(e);
+            }
+        }
+
+        // MASCOT ANIMATION TRIGGER
+        function triggerMascotAnimation(animType) {
+            const m = document.getElementById('m-emo');
+            if (!m) return;
+
+            // Önceki animasyonları temizle
+            m.classList.remove('bounce', 'shake', 'cheer', 'sad', 'dance', 'spin');
+
+            // Yeni animasyonu tetikle
+            void m.offsetWidth; // Reflow zorla
+            m.classList.add(animType);
+
+            // Animasyon bitince sil
+            setTimeout(() => m.classList.remove(animType), 1000);
+        }
+
+        function setMascotEmotion(emo) {
+            const m = document.getElementById('m-emo');
+            if (!m) return;
+
+            if (emo === 'happy') {
+                const happyEmojis = ['🤩', '🥳', '😍', '🎉', '✨', '💫'];
+                m.innerText = happyEmojis[Math.floor(Math.random() * happyEmojis.length)];
+                triggerMascotAnimation('cheer');
+            } else if (emo === 'sad') {
+                const sadEmojis = ['😟', '🥺', '😢', '💔'];
+                m.innerText = sadEmojis[Math.floor(Math.random() * sadEmojis.length)];
+                triggerMascotAnimation('sad');
+            } else if (emo === 'excited') {
+                m.innerText = '🚀';
+                triggerMascotAnimation('spin');
+            } else {
+                m.innerText = icons[st.curW - 1] || "🦉";
+            }
+        }
+
+        // MEGA CELEBRATION EFFECT
+        function megaCelebration() {
+            // Multiple confetti bursts
+            boom();
+            setTimeout(boom, 300);
+            setTimeout(boom, 600);
+
+            // Star explosions
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => createStarExplosion(), i * 150);
+            }
+
+            // Mascot mega animation
+            setMascotEmotion('happy');
+            triggerMascotAnimation('dance');
+
+            // Speak celebration
+            SQ.speak("Muhteşemsin Bade! Harikasın! Bu başarı seninle gurur duymamı sağlıyor!", "tr");
+        }
+
+        function createStarExplosion() {
+            const star = document.createElement('div');
+            star.className = 'star-explosion';
+            star.innerText = ['⭐', '🌟', '✨', '💫', '🎉', '🎊'][Math.floor(Math.random() * 6)];
+            star.style.left = `${20 + Math.random() * 60}%`;
+            star.style.top = `${20 + Math.random() * 60}%`;
+            document.body.appendChild(star);
+            setTimeout(() => star.remove(), 1000);
+        }
+
+        // CORRECT/WRONG ANSWER VISUAL FEEDBACK
+        function showCorrectFeedback(element) {
+            element.classList.add('correct-answer');
+            setMascotEmotion('happy');
+            createStarExplosion();
+            setTimeout(() => element.classList.remove('correct-answer'), 600);
+        }
+
+        function showWrongFeedback(element) {
+            element.classList.add('wrong-answer');
+            setMascotEmotion('sad');
+            setTimeout(() => element.classList.remove('wrong-answer'), 500);
+        }
+
+        function openMap(w) {
+            st.curW = w;
+            showScreen('screen-map');
+            document.body.setAttribute('data-theme', (w % 6 || 6));
+            document.getElementById('map-title').innerText = `${names[w - 1]} Macerası! ${icons[w - 1]}`;
+            setMascotEmotion('excited');
+
+            const path = document.getElementById('map-path');
+            path.innerHTML = '';
+
+            // Gün emojileri (her gün farklı bir tema emojisi)
+            const dayEmojis = ['🌅', '🌈', '🎯', '🚀', '💫', '🏆', '👑'];
+
+            for (let i = 1; i <= 7; i++) {
+                const isl = document.createElement('div');
+                isl.className = 'day-island';
+                isl.style.animationDelay = `${(i - 1) * 0.1}s`;
+
+                // GÜNLÜK İLERLEME HESABI
+                const pool = db[w] || [];
+                const dayWords = [];
+                for (let k = 0; k < 5; k++) {
+                    const idx = ((i - 1) * 5 + k) % pool.length;
+                    if (pool[idx]) dayWords.push(pool[idx]);
+                }
+
+                const learnedCount = dayWords.filter(x => st.learned[x.w]).length;
+                const total = 5;
+                const isComplete = learnedCount >= total;
+
+                isl.innerHTML = `
+                    <span class="day-num">${i}. Gün</span>
+                    <span class="day-emoji">${isComplete ? '✅' : dayEmojis[i - 1]}</span>
+                    <div class="day-stats">
+                        <span style="color: ${isComplete ? '#10b981' : '#64748b'}; font-weight:800">
+                            ${learnedCount}/${total}
+                        </span>
+                    </div>
+                `;
+
+                isl.onclick = () => {
+                    triggerMascotAnimation('bounce');
+                    startLesson(i);
+                };
+                path.appendChild(isl);
+            }
+
+            // Quiz adası
+            const quiz = document.createElement('div');
+            quiz.className = 'quiz-island';
+            quiz.innerHTML = '🏆';
+            quiz.onclick = () => {
+                triggerMascotAnimation('spin');
+                startQuiz();
+            };
+            path.appendChild(quiz);
+
+            SQ.speak(`${names[w - 1]} dünyasına geldik Badeciğim! Hadi bir gün seçelim!`, "tr");
+        }
+
+        function save() {
+            localStorage.setItem('b_s', st.stars);
+            localStorage.setItem('b_u', JSON.stringify(st.unlocked));
+            localStorage.setItem('b_st', JSON.stringify(st.sticks));
+            localStorage.setItem('b_l', JSON.stringify(st.learned));
+            document.getElementById('star-val').innerText = st.stars;
+        }
+
+        function markLearned() {
+            const pool = db[st.curW] || db[1];
+            const item = pool[st.curI];
+            const chip = document.getElementById('learned-chip');
+            const check = document.getElementById('learned-check');
+
+            if (st.learned[item.w]) {
+                delete st.learned[item.w];
+                chip.classList.remove('active');
+                check.innerText = '⭕';
+                setMascotEmotion('default');
+                SQ.speak("Tamam Badeciğim, bu kelimeyi daha sonra tekrar çalışırız.", "tr");
+            } else {
+                st.learned[item.w] = Date.now();
+                chip.classList.add('active');
+                check.innerText = '✅';
+                st.stars += 50;
+                setMascotEmotion('happy');
+                SQ.speak(`Harikasın Bade! ${item.w} kelimesini öğrendiğini not aldım. Artık daha zor sorularda karşına çıkabilir!`, "tr");
+                boom();
+                setTimeout(() => setMascotEmotion('default'), 3000);
+            }
+            save();
+        }
+
+        function startLesson(d) {
+            st.curD = d; st.curI = 0;
+            showScreen('screen-card');
+            renderCard(); // İlk açılışta masal anlat
+        }
+
+        function renderCard() {
+            const rawPool = db[st.curW] || db[1];
+            // GÜNLÜK DİLİM MANTIĞI
+            // (st.curD - 1) * 5'ten başlayıp 5 kelime al.
+            // Eğer havuz yetmezse modüler ile başa sar.
+            const dayPool = [];
+            for (let k = 0; k < 5; k++) {
+                const idx = ((st.curD - 1) * 5 + k) % rawPool.length;
+                if (rawPool[idx]) dayPool.push(rawPool[idx]);
+            }
+
+            const item = dayPool[st.curI];
+            document.getElementById('lesson-emo').innerText = item.e;
+            document.getElementById('lesson-en').innerText = item.w;
+            document.getElementById('lesson-tr').innerText = item.t;
+            document.getElementById('sent-en').innerText = item.sEn;
+            document.getElementById('sent-tr').innerText = item.sTr;
+            document.getElementById('card-index').innerText = `${st.curI + 1} / 5`;
+
+            // ÖĞRENİLDİ DURUMU
+            const chip = document.getElementById('learned-chip');
+            const check = document.getElementById('learned-check');
+            if (st.learned[item.w]) {
+                chip.classList.add('active');
+                check.innerText = '✅';
+            } else {
+                chip.classList.remove('active');
+                check.innerText = '⭕';
+            }
+
+            // CÜMLE KUTUSU ETKİLEŞİMİ (İKİLİ BUTON)
+            const bEn = document.getElementById('btn-sent-en');
+            const bTr = document.getElementById('btn-sent-tr');
+            if (bEn) bEn.onclick = () => triggerSentenceTalk('en');
+            if (bEn) bEn.onclick = () => triggerSentenceTalk('en');
+            if (bTr) bTr.onclick = () => triggerSentenceTalk('tr');
+
+            // MIC BTN ADDITION IF NOT EXISTS
+            if (!document.getElementById('mic-btn')) {
+                const mic = document.createElement('div');
+                mic.id = 'mic-btn';
+                mic.className = 'mic-btn';
+                mic.innerHTML = '🎤';
+                mic.onclick = startActiveRecall;
+                // Append near controls
+                document.querySelector('.controls').appendChild(mic);
+            }
+        }
+
+        function startActiveRecall() {
+            const btn = document.getElementById('mic-btn');
+            if (btn.classList.contains('listening')) return;
+
+            SQ.clear();
+            btn.classList.add('listening');
+            SQ.speak("Seni dinliyorum Bade, hadi söyle!", "tr");
+
+            // Simulate listening
+            setTimeout(() => {
+                btn.classList.remove('listening');
+                setMascotEmotion('happy');
+                SQ.speak("Harikasın Bade! Çok güzel söyledin!", "tr");
+                boom();
+            }, 4000);
+        }
+
+        function closeStory() {
+            showScreen('screen-map');
+            SQ.stop(); // Stop story audio
+        }
+
+        function triggerTalk(l) {
+            const rawPool = db[st.curW] || db[1];
+            const dayPool = [];
+            for (let k = 0; k < 5; k++) {
+                const idx = ((st.curD - 1) * 5 + k) % rawPool.length;
+                if (rawPool[idx]) dayPool.push(rawPool[idx]);
+            }
+            const item = dayPool[st.curI];
+
+            SQ.clear();
+            if (l === 'en') {
+                SQ.push(item.w, "en", 0.75);
+            } else {
+                SQ.push(item.t, "tr", 0.82); // TR Telaffuz fixlendi
+            }
+        }
+
+        // HYBRID AUDIO & LISTEN REPEAT LOGIC
+        // Modified triggerSentenceTalk to support karaoke and listen cue
+        function triggerSentenceTalk(lang) {
+            const rawPool = db[st.curW] || db[1];
+            const dayPool = [];
+            for (let k = 0; k < 5; k++) {
+                const idx = ((st.curD - 1) * 5 + k) % rawPool.length;
+                if (rawPool[idx]) dayPool.push(rawPool[idx]);
+            }
+            const item = dayPool[st.curI];
+
+            SQ.clear();
+
+            if (lang === 'en') {
+                // KARAOKE HIGHLIGHT (Basit simülasyon: İngilizce başladığında target word highlight)
+                const enBox = document.getElementById('sent-en');
+                // Highlight target word in sentence if possible
+                if (item.sEn.toLowerCase().includes(item.w.toLowerCase())) {
+                    enBox.innerHTML = item.sEn.replace(new RegExp(item.w, "gi"), `<span class="highlight-word">${item.w}</span>`);
+                }
+
+                SQ.push(item.sEn, "en", 0.6);
+
+                // LISTEN & REPEAT CUE
+                // Cümle bittikten sonra (yaklaşık süre tahmini veya callback ile)
+                // SQ.push aslında queue'ya atıyor. Araya "SESSİZLİK + GÖRSEL" eylemi atmamız lazım.
+                // SQ.push custom event desteklemiyor şu an. Onu güncelleyelim ya da basitçe setTimeout kullanalım.
+                // SpeechQueue yapısı gereği araya custom action atılamıyor. 
+                // Hack: SQ.push boş bir utterance atıp onStart'ında visual cue yakalım.
+
+                SQ.pushAction(() => {
+                    const cue = document.getElementById('listen-cue');
+                    cue.classList.add('active');
+                    // Müzik kısma mantığı burada olabilir (varsa)
+                });
+
+                // 3 Saniye sessizlik
+                SQ.push("...", "en", 0.1); // Dummy silence
+
+                SQ.pushAction(() => {
+                    document.getElementById('listen-cue').classList.remove('active');
+                    // Reset highlight
+                    enBox.innerHTML = item.sEn;
+                });
+
+            } else {
+                SQ.push(`Yani, ${item.sTr} demek oluyor.`, "tr", 0.6);
+                SQ.push(`${item.w} yani ${item.t} kelimesini bunun gibi kullanabilirsin Bade.`, "tr", 0.6);
+            }
+        }
+
+        // CARTOON PAGE FLIP ANIMATION
+        function moveNav(n) {
+            const next = st.curI + n;
+            const card = document.querySelector('.lesson-card');
+
+            if (next >= 0 && next < 5) {
+                // Add page flip animation
+                const flipDirection = n > 0 ? 'flipRight' : 'flipLeft';
+                card.style.animation = 'none';
+                card.offsetHeight; // Trigger reflow
+                card.style.animation = `${flipDirection} 0.6s ease-out`;
+
+                // Update content after slight delay for effect
+                setTimeout(() => {
+                    st.curI = next;
+                    renderCard();
+                }, 150);
+            }
+            else if (next === 5) { // Gün bitti
+                // Story Mode Aç
+                card.style.animation = 'flipRight 0.6s ease-out';
+                setTimeout(() => {
+                    showScreen('screen-story');
+                    const storyText = document.getElementById('story-text');
+
+                    // Generate Dynamic Story
+                    const rawPool = db[st.curW] || db[1];
+                    const dayWords = [];
+                    for (let k = 0; k < 5; k++) {
+                        const idx = ((st.curD - 1) * 5 + k) % rawPool.length;
+                        if (rawPool[idx]) dayWords.push(rawPool[idx].t);
+                    }
+
+                    const s = `Bir zamanlar Bade, ${dayWords[0]} ile oynarken ${dayWords[1]} bulmuş. Sonra ${dayWords[2]} görüp çok şaşırmış! ${dayWords[3]} ve ${dayWords[4]} ile arkadaş olmuşlar.`;
+                    storyText.innerText = s;
+
+                    SQ.speak("Tebrikler Bade! İşte bugünün hikayesi: " + s, "tr", 0.85);
+                }, 300);
+            }
+        }
+
+        let qTarget = null; let qTotal = 10; let qCurrent = 0;
+
+        function startQuiz() { qCurrent = 0; renderNextQuizQuestion(); }
+
+        function renderNextQuizQuestion() {
+            qCurrent++;
+            if (qCurrent > qTotal) {
+                SQ.speak("Tebrikler Bade! Tüm kelimeleri muhteşem bir şekilde öğrendin, işte büyük ödülün!", "tr");
+                st.stars += 500; boom();
+                if (!st.sticks.includes(st.curW)) { st.sticks.push(st.curW); st.unlocked.push(st.curW + 1); }
+                save();
+                setTimeout(renderWeeks, 4000);
+                return;
+            }
+            showScreen('screen-quiz');
+            document.querySelector('#screen-quiz h1').innerText = `Soru ${qCurrent} / 10`;
+
+            const currentPool = db[st.curW] || db[1];
+
+            // AKILLI SORU HAVUZU: %70 mevcut hafta, %30 daha önce 'Öğrendim' denilen eski kelimeler
+            let mixedPool = [...currentPool];
+            const learnedWords = Object.keys(st.learned);
+            if (learnedWords.length > 5 && qCurrent % 3 === 0) {
+                // Her 3 soruda bir eski öğrendiklerinden sor (Unutmuş mu bakalım?)
+                const oldWord = learnedWords[Math.floor(Math.random() * learnedWords.length)];
+                // Tüm db'den bu kelimeyi bul
+                for (let wIdx in db) {
+                    const found = db[wIdx].find(x => x.w === oldWord);
+                    if (found) { qTarget = found; break; }
+                }
+                SQ.push("Bakalım bunu hala hatırlıyor musun Badeciğim?", "tr", 0.9, false);
+            } else {
+                qTarget = currentPool[Math.floor(Math.random() * currentPool.length)];
+            }
+
+            const allWords = Object.values(db).flat();
+            const others = allWords.filter(x => x.w !== qTarget.w).sort(() => 0.5 - Math.random()).slice(0, 2);
+            const options = [qTarget, ...others].sort(() => 0.5 - Math.random());
+
+            // Görsel Soru Metni
+            document.getElementById('quiz-question-text').innerText = `🧐 "${qTarget.t}" İngilizce ne demek?`;
+
+            const g = document.getElementById('quiz-grid'); g.innerHTML = '';
+            options.forEach(o => {
+                const it = document.createElement('div');
+                it.className = 'quiz-item';
+                it.innerHTML = `<span class="emoji-text">${o.e}</span><span class="word-label">${o.w}</span><span class="feedback-icon" style="display:none"></span>`;
+                it.onclick = () => {
+                    const icon = it.querySelector('.feedback-icon');
+                    if (o.w === qTarget.w) {
+                        it.style.borderColor = '#2ecc71';
+                        it.style.background = '#e8f5e9';
+                        icon.innerHTML = '✅';
+                        icon.style.display = 'block';
+                        st.stars += 20; save(); boom();
+                        setMascotEmotion('happy');
+
+                        // ÖNCE DOĞRU BİLDİN DİYOR, SONRA KELİMEYİ SÖYLÜYOR
+                        SQ.speak(getPhrase('quizCorrect'), "tr");
+                        SQ.push(`Evet, ${o.w}!`, "en", 0.7);
+
+                        setTimeout(renderNextQuizQuestion, 2500);
+                    } else {
+                        it.style.borderColor = '#e74c3c';
+                        it.style.background = '#ffebee';
+                        it.style.animation = 'shake 0.5s';
+                        icon.innerHTML = '❌';
+                        icon.style.display = 'block';
+
+                        SQ.speak(getPhrase('quizWrong'), "tr");
+                        setMascotEmotion('sad');
+                        // YANLIŞ CEVABIN İNGİLİZCESİNİ SÖYLE Kİ ONU DA ÖĞRENSİN
+                        SQ.push(`Badeciğim, bu ${o.w} demek. Soruyu bir daha dinle bakalım.`, "tr");
+
+                        setTimeout(() => {
+                            it.style.animation = '';
+                            it.style.borderColor = 'white';
+                            it.style.background = 'white';
+                            icon.style.display = 'none';
+                        }, 1500);
+                    }
+                };
+                g.appendChild(it);
+            });
+
+            SQ.clear();
+            SQ.push(`${qTarget.t} kelimesinin İngilizcesi nedir Bade?`, "tr");
+            SQ.push(`Where is the ${qTarget.w}?`, "en", 0.7);
+        }
+
+        function sayAgain() {
+            SQ.clear();
+            SQ.push(`${qTarget.t} kelimesinin İngilizcesini bulabilir misin Bade?`, "tr");
+            SQ.push(qTarget.w, "en", 0.75);
+        }
+
+        function showStickers() {
+            showScreen('screen-stickers');
+            const g = document.getElementById('grid-stickers'); g.innerHTML = '';
+            for (let i = 1; i <= 12; i++) {
+                const has = st.sticks.includes(i);
+                const box = document.createElement('div');
+                box.className = 'quiz-item'; box.innerText = has ? icons[i - 1] : '❓';
+                g.appendChild(box);
+            }
+            SQ.speak("Bak Bade, burada senin kazandığın hazineler var!", "tr");
+        }
+
+        // MASTERPIECE VISIBILITY LOGIC - FIXED!
+        function showScreen(id) {
+            console.log("showScreen called with:", id);
+
+            // 1. Hide ALL screens by removing 'active' class
+            document.querySelectorAll('.screen').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // 2. Show target screen by adding 'active' class
+            const target = document.getElementById(id);
+            if (target) {
+                target.classList.add('active');
+                console.log("Screen activated:", id);
+            } else {
+                console.error("CRITICAL: Screen ID not found ->", id);
+                alert("Hata: Ekran bulunamadı - " + id);
+            }
+        }
+
+        function hideAll() {
+            document.querySelectorAll('.screen').forEach(el => {
+                el.classList.add('hidden');
+                el.style.display = 'none';
+            });
+        }
+
+        function save() {
+            const el = document.getElementById('star-val'); if (el) el.innerText = st.stars;
+            localStorage.setItem('b_s', st.stars);
+            localStorage.setItem('b_u', JSON.stringify(st.unlocked));
+            localStorage.setItem('b_st', JSON.stringify(st.sticks));
+        }
+
+        function goHome() {
+            SQ.speak("Ana menü!", "tr");
+            showScreen('screen-weeks');
+        }
+
+        function mascotSing() { SQ.speak("Seninle öğrenmek ne güzel Badeciğim! Seni çok seviyorum!", "tr"); }
+
+        // MEGA BOOM - ENHANCED CONFETTI
+        function boom() {
+            const c = document.getElementById('confetti'); const x = c.getContext('2d');
+            c.width = innerWidth; c.height = innerHeight; let p = [];
+            const colors = ['#ff00ff', '#00ffff', '#00ff88', '#ffff00', '#ff8800', '#ff0066', '#0066ff'];
+            for (let i = 0; i < 300; i++) {
+                p.push({
+                    x: Math.random() * c.width,
+                    y: c.height + Math.random() * 100,
+                    vx: Math.random() * 10 - 5,
+                    vy: -Math.random() * 25 - 15,
+                    c: colors[Math.floor(Math.random() * colors.length)],
+                    s: Math.random() * 20 + 8,
+                    r: Math.random() * 360,
+                    vr: Math.random() * 20 - 10
+                });
+            }
+            function f() {
+                x.clearRect(0, 0, c.width, c.height);
+                p.forEach((i, idx) => {
+                    i.x += i.vx;
+                    i.y += i.vy;
+                    i.vy += 0.4;
+                    i.r += i.vr;
+                    x.save();
+                    x.translate(i.x, i.y);
+                    x.rotate(i.r * Math.PI / 180);
+                    x.fillStyle = i.c;
+                    x.shadowColor = i.c;
+                    x.shadowBlur = 15;
+                    x.fillRect(-i.s / 2, -i.s / 2, i.s, i.s);
+                    x.restore();
+                    if (i.y > c.height + 50) p.splice(idx, 1);
+                });
+                if (p.length > 0) requestAnimationFrame(f);
+            }
+            f();
+        }
+
+        // MEGA CELEBRATION - ULTIMATE
+        function ultraCelebration() {
+            boom();
+            setTimeout(boom, 200);
+            setTimeout(boom, 400);
+            const celebEmojis = ['🎉', '🎊', '⭐', '🌟', '✨', '💫', '🏆', '👑', '🎁', '💎'];
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const emoji = document.createElement('div');
+                    emoji.className = 'flying-emoji';
+                    emoji.style.cssText = `position:fixed;font-size:${3 + Math.random() * 4}rem;left:${Math.random() * 100}%;top:110%;z-index:9999;pointer-events:none;animation:floatUp ${5 + Math.random() * 5}s linear forwards;`;
+                    emoji.innerText = celebEmojis[Math.floor(Math.random() * celebEmojis.length)];
+                    document.body.appendChild(emoji);
+                    setTimeout(() => emoji.remove(), 10000);
+                }, i * 80);
+            }
+            setMascotEmotion('happy');
+            triggerMascotAnimation('dance');
+        }
+
+        // SECRET MASCOT 
+        let mClicks = 0, lastMClick = 0;
+
+        // INIT
+        window.onload = () => {
+            SQ.init();
+            renderWeeks();
+            save();
+            showScreen('screen-weeks');
+            createCosmicBackground();
+
+            // Setup mascot secret
+            const m = document.getElementById('m-emo');
+            if (m) m.onclick = () => {
+                const now = Date.now();
+                mClicks = (now - lastMClick < 500) ? mClicks + 1 : 1;
+                lastMClick = now;
+                triggerMascotAnimation('bounce');
+                mascotSing();
+                if (mClicks >= 5) { mClicks = 0; secretRainbow(); }
+            };
+        };
+
+        // SECRET RAINBOW
+        function secretRainbow() {
+            ultraCelebration();
+            document.body.style.animation = 'none';
+            setTimeout(() => {
+                document.body.style.background = 'linear-gradient(135deg, #ff0000, #ff8800, #ffff00, #00ff00, #00ffff, #0088ff, #ff00ff)';
+                document.body.style.backgroundSize = '400% 400%';
+                document.body.style.animation = 'cosmicPulse 2s ease infinite';
+            }, 50);
+            SQ.speak("Vayy! Gizli modu buldun! Sen gerçekten bir süperstar sın!", "tr");
+            setTimeout(() => {
+                document.body.style.background = 'linear-gradient(135deg, #1a0033 0%, #0d0d2b 30%, #1a0033 60%, #2d1b4e 100%)';
+                document.body.style.animation = 'cosmicPulse 20s ease infinite';
+            }, 6000);
+        }
+
+        // COSMIC BACKGROUND ENHANCED
+        function createCosmicBackground() {
+            // More stars
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.width = `${1 + Math.random() * 4}px`;
+                star.style.height = star.style.width;
+                star.style.animationDelay = `${Math.random() * 3}s`;
+                star.style.animationDuration = `${1 + Math.random() * 3}s`;
+                document.body.appendChild(star);
+            }
+
+            // Neon particles
+            const colors = ['#ff00ff', '#00ffff', '#00ff88', '#ffff00', '#ff8800'];
+            for (let i = 0; i < 35; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = `${Math.random() * 100}%`;
+                const s = 6 + Math.random() * 30;
+                p.style.width = s + 'px';
+                p.style.height = s + 'px';
+                p.style.background = colors[Math.floor(Math.random() * colors.length)];
+                p.style.opacity = 0.2 + Math.random() * 0.4;
+                p.style.animationDuration = `${10 + Math.random() * 30}s`;
+                p.style.animationDelay = `${Math.random() * 20}s`;
+                p.style.filter = `blur(${2 + Math.random() * 6}px)`;
+                p.style.boxShadow = `0 0 ${15 + Math.random() * 25}px ${p.style.background}`;
+                document.body.appendChild(p);
+            }
+
+            // More planets
+            const planets = ['🌙', '⭐', '💫', '✨', '🌟', '🪐', '🌍', '☀️'];
+            for (let i = 0; i < 6; i++) {
+                const c = document.createElement('div');
+                c.className = 'orbit-container';
+                c.style.left = `${5 + Math.random() * 90}%`;
+                c.style.top = `${5 + Math.random() * 90}%`;
+                const pl = document.createElement('div');
+                pl.className = 'orbiting-planet';
+                pl.innerText = planets[Math.floor(Math.random() * planets.length)];
+                pl.style.animationDuration = `${5 + Math.random() * 15}s`;
+                pl.style.fontSize = `${1.2 + Math.random() * 2.5}rem`;
+                c.appendChild(pl);
+                document.body.appendChild(c);
+            }
+
+            // Shooting stars
+            setInterval(() => { if (Math.random() > 0.6) shootingStar(); }, 2500);
+        }
+
+        // SHOOTING STAR
+        function shootingStar() {
+            const s = document.createElement('div');
+            s.style.cssText = `position:fixed;width:4px;height:4px;background:#fff;border-radius:50%;left:${Math.random() * 70}%;top:-10px;z-index:5;pointer-events:none;box-shadow:0 0 10px #fff,0 0 20px #fff,0 0 30px #fff,-50px 0 20px rgba(255,255,255,0.5);`;
+            document.body.appendChild(s);
+            s.animate([
+                { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                { transform: `translate(30vw, 120vh) scale(0)`, opacity: 0 }
+            ], { duration: 1200, easing: 'ease-out' });
+            setTimeout(() => s.remove(), 1200);
+        }
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('SW registered!', reg))
+                    .catch(err => console.log('SW failed!', err));
+            });
+        }
+    </script>
+</body>
+
+</html>
