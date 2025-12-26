@@ -674,18 +674,18 @@
         .lesson-card {
             width: 95%;
             max-width: 800px;
-            min-height: 80%;
+            min-height: auto;
             background: linear-gradient(145deg,
                     rgba(30, 30, 60, 0.9) 0%,
                     rgba(20, 20, 50, 0.95) 100%);
-            border-radius: 50px;
+            border-radius: 40px;
             border: 4px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(20px);
-            padding: 40px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             animation: slideInBounce 0.5s ease-out;
             box-shadow:
                 0 0 50px rgba(0, 150, 255, 0.3),
@@ -696,7 +696,7 @@
 
         /* MEGA WORD TITLE */
         .word-title {
-            font-size: 6rem;
+            font-size: 4.5rem;
             font-weight: 900;
             color: white;
             margin: 0;
@@ -705,11 +705,11 @@
                 0 0 40px var(--neon-blue),
                 0 0 80px var(--neon-blue);
             animation: neonPulse 2s infinite;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
         }
 
         .word-tr {
-            font-size: 4rem;
+            font-size: 3rem;
             color: var(--neon-pink);
             font-weight: 700;
             margin: 0;
@@ -720,8 +720,8 @@
 
         /* GIANT EMOJI */
         .emoji-lesson {
-            font-size: 15rem;
-            margin: 20px 0;
+            font-size: 11rem;
+            margin: 15px 0;
             filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.6));
             animation: megaBounce 3s infinite ease-in-out;
         }
@@ -776,11 +776,11 @@
         }
 
         .play-btn {
-            width: 90px;
-            height: 90px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             border: none;
-            font-size: 2.5rem;
+            font-size: 2rem;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 0 30px currentColor;
